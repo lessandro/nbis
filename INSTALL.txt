@@ -1,0 +1,84 @@
+*******************************************************************************License: This software and/or related materials was developed at the National Instituteof Standards and Technology (NIST) by employees of the Federal Governmentin the course of their official duties. Pursuant to title 17 Section 105of the United States Code, this software is not subject to copyrightprotection and is in the public domain. This software and/or related materials have been determined to be not subjectto the EAR (see Part 734.3 of the EAR for exact details) because it isa publicly available technology and software, and is freely distributedto any interested party with no licensing requirements.  Therefore, it is permissible to distribute this software as a free download from the internet.Disclaimer: This software and/or related materials was developed to promote biometricstandards and biometric technology testing for the Federal Governmentin accordance with the USA PATRIOT Act and the Enhanced Border Securityand Visa Entry Reform Act. Specific hardware and software products identifiedin this software were used in order to perform the software development.In no case does such identification imply recommendation or endorsementby the National Institute of Standards and Technology, nor does it imply thatthe products and equipment identified are necessarily the best availablefor the purpose.This software and/or related materials are provided "AS-IS" without warrantyof any kind including NO WARRANTY OF PERFORMANCE, MERCHANTABILITY,NO WARRANTY OF NON-INFRINGEMENT OF ANY 3RD PARTY INTELLECTUAL PROPERTYor FITNESS FOR A PARTICULAR PURPOSE or for any purpose whatsoever, for thelicensed product, however used. In no event shall NIST be liable for anydamages and/or costs, including but not limited to incidental or consequentialdamages of any kind, including economic damage or injury to property and lostprofits, regardless of whether NIST shall be advised, have reason to know,or in fact shall know of the possibility.By using this software, you agree to bear all risk relating to quality,use and performance of the software and/or related materials.  You agreeto hold the Government harmless from any claim arising from your useof the software.*******************************************************************************
+                       
+       
+                    NBIS Open Source Software Installation Guide
+                   ----------------------------------------------
+
+Step 1.
+        Run the following command to setup your build environment:
+        > ./setup.sh <FINAL INSTALLATION DIR> [--without-X11]
+                 [--STDLIBS | --with-JASPER] [--32 | --64]
+                 
+        <FINAL INSTALLATION DIR> is replaced by the specific directory path
+        where you want to install the NBIS applications, libraries,
+        pre-computed runtime data and manuals.
+
+        Option Usage :
+             --without-X11          Build without X11 support
+             --STDLIBS              Build without JASPER, OPENJPEG and PNG image 
+                                    format support
+             --with-JASPER          Build with Jasper. This will disable the OPENJPEG
+                                    image format support 
+             --32                   Build on 32bit architecture machine
+             --64                   Build on 64bit architecture machine
+             
+        -OR-
+
+        Run the following command to setup your build environment for MSys MinGW on 
+        WIN32 [or WIN64]:
+        > ./setup.sh <FINAL INSTALLATION DIR> --MSYS (--32 | --64) [--STDLIBS | --with-JASPER]
+
+Step 2.
+        Run the following commands to build "NBIS":
+        > make config
+        > make it
+        > make install LIBNBIS=[yes|no]
+        > make catalog
+
+Note:   If you enable the "LIBNBIS=no" option during make install, it will create the following
+	libraries: 
+		liban2k.a libclapck.a libfft.a libioutil.a libmindtct.a libnfseg.a libpcautil.a  
+		libutil.a libbozorth3.a libf2c.a libihead.a libjpegb.a libmlp.a libopenjpeg.a 
+		libpcax.a libwsq.a libcblas.a libfet.a libimage.a libjpegl.a libnfiq.a libpca.a 
+		libpng.a libz.a
+	
+	If you enable the "LIBNBIS=yes" option during make install, it will combine all the 
+	libraries listed above and build libnbis.a.
+
+Note: OPENJPEG requires libtiff to build.
+      Please be sure that you have libtiff installed in your system. 
+      
+
+Note: If you build on Win 32-bit or Win 64-bit machine, please follow the instructions 
+      below to setup your MSys and MinGW build and test environment:
+
+       - Win 32-bit build/run environment setup overview:
+         1) Download the MinGW auto installer and run it
+            a) at the Choose Package dialog, select 'current'
+            b) at Choose Components dialog, select any optional components
+            c) install into <ROOT_DRIVE>  e.g. D:\
+         2) Download latest gcc-core archive files
+            a) extract into <ROOT_DRIVE>
+            b) overwrite all files during extraction from zip
+         3) Install MSYS 
+            a) answer yes to run the post install process
+            b) answer yes that mingw is already installed
+            c) enter path as <ROOT_DRIVE>/mingw   e.g.  D:/mingw (use forward slash)
+       - Win 64-bit build/run environment setup overview: 
+         1) Download archive file containing GCC version 4.4.5 20100513 (prerelease)
+            [svn/rev.159365 - mingw-w64/oz]
+         2) Install MinGW by extracting downloaded file into <ROOT_DRIVE> e.g. D:\
+         3) Change the extracted dir from 'mingw64' to 'mingw'
+         4) Install MSYS
+            a) answer yes to run the post install process
+            b) answer yes that mingw is already installed
+            c) enter path as <ROOT_DRIVE>/mingw   e.g.  D:/mingw (use forward slash)
+
+       - For both architectures, run setup.sh using <FINAL_INSTALLATION_DIR>
+         with the format of <DRIVE LETTER> followed by : (colon).  For example,
+         ./setup.sh d:/src/NBIS/... --MSYS (--32 | --64).  (Refer to "Step 1.")
+       - NOTE: You must run setup.sh as described above.  If you do not, then
+         there is no guarantee that all applications will build and/or run.
+
+--------------------------------------------------------------------------------
+
