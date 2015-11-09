@@ -75,6 +75,7 @@ char *extractfet(char *feature, FET *fet)
 {
   int item;
   char *value;
+  size_t len = 0;
 
   for (item = 0;
        (item < fet->num) && (strcmp(fet->names[item],feature) != 0);
@@ -82,9 +83,11 @@ char *extractfet(char *feature, FET *fet)
   if (item>=fet->num)
      fatalerr("extractfet",feature,"not found");
   if(fet->values[item] != (char *)NULL){
-      value = strdup(fet->values[item]);
+      len = strlen(fet->values[item]) + 1;
+      value = malloc(len);
       if (value == (char *)NULL)
-         syserr("extractfet","strdup","value");
+         syserr("extractfet","malloc","value");
+      strncpy(value, fet->values[item], len);
   }
   else
       value = (char *)NULL;
@@ -96,6 +99,7 @@ int extractfet_ret(char **ovalue, char *feature, FET *fet)
 {
   int item;
   char *value;
+  size_t len = 0;
 
   for (item = 0;
        (item < fet->num) && (strcmp(fet->names[item],feature) != 0);
@@ -106,11 +110,13 @@ int extractfet_ret(char **ovalue, char *feature, FET *fet)
      return(-2);
   }
   if(fet->values[item] != (char *)NULL){
-      value = (char *)strdup(fet->values[item]);
+      len = strlen(fet->values[item]) + 1;
+      value = malloc(len);
       if (value == (char *)NULL){
-         fprintf(stderr, "ERROR : extractfet_ret : strdup : value\n");
+         fprintf(stderr, "ERROR : extractfet_ret : malloc : value\n");
          return(-3);
      }
+     strncpy(value, fet->values[item], len);
   }
   else
       value = (char *)NULL;

@@ -76,6 +76,7 @@ void updatefet(char *feature, char *value, FET *fet)
 {
   int item;
   int increased, incr;
+  size_t len = 0;
 
   for (item = 0;
        (item < fet->num) && (strcmp(fet->names[item],feature) != 0);
@@ -86,9 +87,11 @@ void updatefet(char *feature, char *value, FET *fet)
         fet->values[item] = (char *)NULL;
      }
      if(value != (char *)NULL){
-        fet->values[item] = strdup(value);
+        len = strlen(value) + 1;
+        fet->values[item] = malloc(len);
         if(fet->values[item] == (char *)NULL)
-           syserr("updatefet","strdup","fet->values[]");
+           syserr("updatefet","malloc","fet->values[]");
+	strncpy(fet->values[item], value, len);
      }
   }
   else{
@@ -97,13 +100,17 @@ void updatefet(char *feature, char *value, FET *fet)
         increased = fet->alloc + max(10, incr);	/* ever is larger	*/
         reallocfet(fet, increased);
      }
-     fet->names[fet->num] = (char *)strdup(feature);
+     len = strlen(feature) + 1;
+     fet->names[fet->num] = malloc(len);
      if(fet->names[fet->num] == (char *)NULL)
-        syserr("updatefet","strdup","fet->names[]");
+        syserr("updatefet","malloc","fet->names[]");
+     strncpy(fet->names[fet->num], feature, len);
      if(value != (char *)NULL){
-        fet->values[fet->num] = (char *)strdup(value);
+        len = strlen(value) + 1;
+        fet->values[fet->num] = malloc(len);
         if(fet->values[fet->num] == (char *)NULL)
-           syserr("updatefet","strdup","fet->values[]");
+           syserr("updatefet","malloc","fet->values[]");
+	strncpy(fet->values[fet->num], value, len);
      }
      (fet->num)++;
   }
@@ -114,6 +121,7 @@ int updatefet_ret(char *feature, char *value, FET *fet)
 {
   int ret, item;
   int increased, incr;
+  size_t len = 0;
 
   for (item = 0;
        (item < fet->num) && (strcmp(fet->names[item],feature) != 0);
@@ -124,11 +132,13 @@ int updatefet_ret(char *feature, char *value, FET *fet)
         fet->values[item] = (char *)NULL;
      }
      if(value != (char *)NULL){
-        fet->values[item] = (char *)strdup(value);
+        len = strlen(value) + 1;
+        fet->values[item] = malloc(len);
         if(fet->values[item] == (char *)NULL){
-           fprintf(stderr, "ERROR : updatefet_ret : strdup : fet->values[]\n");
+           fprintf(stderr, "ERROR : updatefet_ret : malloc : fet->values[]\n");
            return(-2);
         }
+	strncpy(fet->values[item], value, len);
      }
   }
   else{
@@ -138,17 +148,21 @@ int updatefet_ret(char *feature, char *value, FET *fet)
         if((ret = reallocfet_ret(&fet, increased)))
            return(ret);
      }
-     fet->names[fet->num] = (char *)strdup(feature);
+     len = strlen(feature) + 1;
+     fet->names[fet->num] = malloc(len);
      if(fet->names[fet->num] == (char *)NULL){
-        fprintf(stderr, "ERROR : updatefet_ret : strdup : fet->names[]\n");
+        fprintf(stderr, "ERROR : updatefet_ret : malloc : fet->names[]\n");
         return(-3);
      }
+     strncpy(fet->names[fet->num], feature, len);
      if(value != (char *)NULL){
-        fet->values[fet->num] = (char *)strdup(value);
+     	len = strlen(value) + 1;
+        fet->values[fet->num] = malloc(len);
         if(fet->values[fet->num] == (char *)NULL){
-           fprintf(stderr, "ERROR : updatefet_ret : strdup : fet->values[]\n");
+           fprintf(stderr, "ERROR : updatefet_ret : malloc : fet->values[]\n");
            return(-4);
         }
+	strncpy(fet->values[fet->num], value, len);
      }
      (fet->num)++;
   }

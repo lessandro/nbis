@@ -50,6 +50,7 @@ of the software.
                Michael Garris
       DATE:    11/24/1999
       UPDATED: 04/25/2005 by MDG
+      UPDATED: 07/10/2014 by Kenneth Ko
 
       Contains routines responsible for WSQ encoding image
       pixel data.
@@ -105,7 +106,7 @@ int wsq_encode_mem(unsigned char **odata, int *olen, const float r_bitrate,
    }
 
    /* Convert image pixels to floating point. */
-   if(ret = conv_img_2_flt_ret(fdata, &m_shift, &r_scale, idata, num_pix)) {
+   if((ret = conv_img_2_flt_ret(fdata, &m_shift, &r_scale, idata, num_pix))) {
       free(fdata);
       return(ret);
    }

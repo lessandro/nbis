@@ -52,7 +52,9 @@ of the software.
       UPDATED: 03/15/2005 by MDG
       UPDATED: 10/07/2008 by Joseph C. Konczal
       UPDATED: 01/06/2008 by Kenneth Ko - add support for HPUX compile
-
+      UPDATED: 07/10/2014 by Kenneth Ko
+               02/25/2015 (Kenneth Ko) - Updated everything related to
+                                         OPENJPEG to OPENJP
       Contains routines responsible for automatically determining the
       format of a pixmap file based on its contents.
 
@@ -114,7 +116,7 @@ int image_type(int *img_type, unsigned char *idata, const int ilen)
    }
 #endif
 
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
    if (is_jp2(idata, ilen) > 0){
       *img_type = JP2_IMG;
       return(0);
@@ -126,7 +128,7 @@ int image_type(int *img_type, unsigned char *idata, const int ilen)
    /* if system error */
    if(ret < 0)
       return(ret);
-   if((ret == TRUE)){
+   if(ret == TRUE){
       *img_type = ANSI_NIST_IMG;
       return(0);
    }
@@ -216,7 +218,7 @@ int is_jp2(unsigned char *idata, const int ilen)
 }
 #endif
 
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
 int is_jp2(unsigned char *idata, const int ilen)
 {
    int	ret;

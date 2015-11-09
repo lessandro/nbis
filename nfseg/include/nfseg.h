@@ -96,7 +96,7 @@ typedef struct {
 
 typedef struct {
    int tlx, tly;
-   int trx, try;
+   int tRightX, tRightY;
    int blx, bly;
    int brx, bry;
    int sx, sy, sw, sh, nrsw, nrsh;

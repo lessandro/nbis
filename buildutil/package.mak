@@ -36,6 +36,7 @@
 # Date Created:         08/20/2006
 # Date Updated:         03/27/2007
 #                       11/27/2007
+#                       02/25/2015
 #
 # ******************************************************************************
 #
@@ -131,6 +132,7 @@ it: libs bins
 # Target to copy all header files to $(EXPORTS_INC_DIR).
 #
 # ******************************************************************************
+#
 cpheaders:
 	@if [ $(PACKAGE) = "ijg" ]; then \
 		echo "Start: Copying $(PACKAGE)'s header files to \"$(EXPORTS_INC_DIR)\"...."; \
@@ -152,11 +154,13 @@ cpheaders:
 		echo "$(CP) -Rpf $(DIR_SRC)/lib/zlib/*.h $(EXPORTS_INC_DIR)"; \
 		$(CP) -Rpf $(DIR_SRC)/lib/zlib/*.h $(EXPORTS_INC_DIR); \
 		echo "End: Copying zlib's header files to \"$(EXPORTS_INC_DIR)\"."; \
-	elif [ $(PACKAGE) = "openjpeg" ]; then \
+	elif [ $(PACKAGE) = "openjp2" ]; then \
 		echo "Start: Copying $(PACKAGE)'s header files to \"$(EXPORTS_INC_DIR)\"...."; \
-		$(MKDIR) $(EXPORTS_INC_DIR)/openjpeg; \
-		echo "$(CP) -Rpf $(DIR_SRC)/lib/openjpeg/libopenjpeg/*.h $(EXPORTS_INC_DIR)/openjpeg"; \
-		$(CP) -Rpf $(DIR_SRC)/lib/openjpeg/libopenjpeg/*.h $(EXPORTS_INC_DIR)/openjpeg; \
+		$(MKDIR) $(EXPORTS_INC_DIR)/openjp2; \
+		echo "$(CP) -Rpf $(DIR_SRC)/lib/openjp2/src/lib/openjp2/*.h $(EXPORTS_INC_DIR)/openjp2"; \
+		$(CP) -Rpf $(DIR_SRC)/lib/openjp2/src/lib/openjp2/*.h $(EXPORTS_INC_DIR)/openjp2; \
+        echo "$(CP) -Rpf $(DIR_SRC)/lib/openjp2/build/src/lib/openjp2/*.h $(EXPORTS_INC_DIR)/openjp2"; \
+        $(CP) -Rpf $(DIR_SRC)/lib/openjp2/build/src/lib/openjp2/*.h $(EXPORTS_INC_DIR)/openjp2; \
 	else \
 		echo "Start: Copying $(PACKAGE)'s header files to \"$(EXPORTS_INC_DIR)\"...."; \
 		echo "$(CP) -Rpf $(DIR_INC)/* $(EXPORTS_INC_DIR)"; \
@@ -173,6 +177,7 @@ cpheaders:
 # Target to make all the .a in obj directory.
 #
 # ******************************************************************************
+#
 libs: cpheaders
 	@if [ $(PACKAGE) = "ijg" ]; then \
 		echo "Start: Compiling $(PACKAGE)'s libraries and binaries...."; \
@@ -186,7 +191,7 @@ libs: cpheaders
 		echo "Start: Compiling $(PACKAGE)'s libraries and binaries...."; \
 		(cd $(DIR_SRC) && $(MAKE) libs) || exit 1; \
 		echo "End: Compiling $(PACKAGE) libraries and binaries."; \
-	elif [ $(PACKAGE) = "openjpeg" ]; then \
+	elif [ $(PACKAGE) = "openjp2" ]; then \
 		echo "Start: Compiling $(PACKAGE)'s libraries and binaries...."; \
 		(cd $(DIR_SRC) && $(MAKE) libs) || exit 1; \
 		echo "End: Compiling $(PACKAGE) libraries and binaries."; \

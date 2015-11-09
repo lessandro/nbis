@@ -51,6 +51,10 @@ of the software.
       UPDATED: 10/02/2008 by Joseph C. Konczal - slight modification
                           to add support for 8-bit JP2 in addition to
                           24-bit.
+               08/19/2016 (Kenneth Ko) - Add OpenJPEG2 support
+               02/25/2015 (Kenneth Ko) - Updated everything related to
+                                         OPENJPEG to OPENJP2
+               02/26/2015 (Kenneth Ko) - Fixed JP2 image decoding issue
       
       Contains routines responsible for decoding image data contained
       in image records according to the ANSI/NIST 2007 standard.
@@ -61,8 +65,16 @@ of the software.
 #include <string.h>
 #include <jpeg2k.h>
 
-#ifdef __NBIS_OPENJPEG__
-	#include "openjpeg/openjpeg.h"
+#ifdef __NBIS_OPENJP2__
+	#include "openjp2/openjpeg.h"
+   #include "openjp2/cio.h"
+   #ifdef OPJ_HAVE_LIBLCMS2
+   #include <lcms2.h>
+   #endif
+   #ifdef OPJ_HAVE_LIBLCMS1
+   #include <lcms.h>
+   #endif
+
 #endif
 
 #ifdef __NBIS_JASPER__
@@ -191,7 +203,7 @@ int img_dat_generate(IMG_DAT **oimg_dat, jas_image_t *image)
 }
 #endif
 
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
 #define J2K_CFMT 0
 #define JP2_CFMT 1
 #define JPT_CFMT 2
@@ -204,60 +216,155 @@ int img_dat_generate(IMG_DAT **oimg_dat, jas_image_t *image)
 #define RAW_DFMT 15
 #define TGA_DFMT 16
 
+static void error_callback(const char *msg, void *client_data)
+{
+   (void)client_data;
+   fprintf(stdout, "[ERROR] %s", msg);
+}
+static void warning_callback(const char *msg, void *client_data)
+{
+   (void)client_data;
+   fprintf(stdout, "[WARNING] %s", msg);
+}
+static void info_callback(const char *msg, void *client_data)
+{
+   (void)client_data;
+   fprintf(stdout, "[INFO] %s", msg);
+}
+
+static void opj_free_from_idata(void *p_user_data)
+{
+   /* Intentionally Leave Blank */
+}
+
+static OPJ_UINT64 opj_get_data_length_from_idata(OPJ_SIZE_T p_nb_bytes)
+{
+   return (OPJ_UINT64)p_nb_bytes;
+}
+
+static OPJ_SIZE_T opj_read_from_idata(void * p_buffer, OPJ_SIZE_T p_nb_bytes,
+                                      void * p_user_data)
+{
+   struct opj_dstream *pb = (struct opj_dstream *)p_user_data;
+
+   if (pb->status != 0)
+   {
+      memcpy(p_buffer, pb->data, p_nb_bytes);
+      pb->status = 0;
+      return p_nb_bytes;
+   }
+   else
+   {
+      pb->status = 0;
+      return -1;
+   }
+}
+
+
 int openjpeg2k_decode_mem(IMG_DAT **oimg_dat, int *lossyflag,
                       unsigned char *idata, const int ilen)
 {
    IMG_DAT *img_dat;
+   opj_dparameters_t parameters;   
    opj_image_t *image = NULL;
-   opj_event_mgr_t event_mgr;
-   opj_dinfo_t* dinfo = NULL;
-   opj_cio_t *cio = NULL;
-   opj_dparameters_t parameters;
-   opj_codestream_info_t cstr_info;
+   opj_stream_t *l_stream = NULL;
+   opj_codec_t* l_codec = NULL; 
    signed char* sgnd_buf = NULL;
    unsigned char* unsgnd_buf = NULL;
+   struct opj_dstream s_stream;
    int size;
-
-   /* configure the event handler */
-   memset(&event_mgr, 0, sizeof(opj_event_mgr_t));
 
    /* set decoding parameters to default values */
    opj_set_default_decoder_parameters(&parameters);
+   
+   /* create l_stream */
+   l_stream = opj_stream_create(ilen, OPJ_TRUE);
+   if (! l_stream)
+   {
+      return EXIT_FAILURE;
+   }
+   
+   /* Initialize opj_dstream structure */
+   s_stream.status = 1;
+   s_stream.data = idata;
 
-   /* set the decode and encode format */
-   parameters.decod_format = get_file_format("b.jp2");
-   parameters.cod_format = get_file_format("a.raw");
 
-   /* get a decoder handle */
-   dinfo = opj_create_decompress(CODEC_JP2);
-
+   /* Set stream infromation */
+   opj_stream_set_user_data(l_stream, &s_stream,
+                            (opj_stream_free_user_data_fn) opj_free_from_idata);
+   opj_stream_set_user_data_length(l_stream,
+                                   opj_get_data_length_from_idata(ilen));
+   
+   opj_stream_set_read_function(l_stream,
+                                (opj_stream_read_fn) opj_read_from_idata);
+    
+   /* Get a decoder handle */
+   l_codec = opj_create_decompress(OPJ_CODEC_JP2);
+   
    /* catch events using our callbacks and give a local context */
-   opj_set_event_mgr((opj_common_ptr)dinfo, &event_mgr, stderr);
-
-   /* setup the decoder decoding parameters using user parameters */
-   opj_setup_decoder(dinfo, &parameters);
-
-   /* open a byte stream */
-   cio = opj_cio_open((opj_common_ptr)dinfo, idata, ilen);
-
-   /* decode the stream and fill the image structure */
-   image = opj_decode(dinfo, cio);
-
-   if (!image) 
+   opj_set_info_handler(l_codec, info_callback,00);
+   opj_set_warning_handler(l_codec, warning_callback,00);
+   opj_set_error_handler(l_codec, error_callback,00);
+   
+   /* Setup the decoder decoding parameters using user parameters */
+   if ( !opj_setup_decoder(l_codec, &parameters) )
    {
-      fprintf(stderr, "ERROR -> failed to decode image!\n");
-      opj_destroy_decompress(dinfo);
-      opj_cio_close(cio);
-      return(-1);
+      fprintf(stderr, "ERROR -> opj_compress: failed to setup the decoder\n");
+      opj_stream_destroy(l_stream);
+      opj_destroy_codec(l_codec);
+      return EXIT_FAILURE;
    }
-
-   opj_cio_close(cio);
-
-   if (dinfo) 
+   
+   /* Read the main header of the codestream and if necessary the JP2 boxes*/
+   if(! opj_read_header(l_stream, l_codec, &image)){
+      fprintf(stderr, "ERROR -> opj_decompress: failed to read the header\n");
+      opj_stream_destroy(l_stream);
+      opj_destroy_codec(l_codec);
+      opj_image_destroy(image);
+      return EXIT_FAILURE;
+   }
+   
+   if (!parameters.nb_tile_to_decode)
    {
-      opj_destroy_decompress(dinfo);
+      /* Optional if you want decode the entire image */
+      if (!opj_set_decode_area(l_codec, image, (OPJ_INT32)parameters.DA_x0,
+            (OPJ_INT32)parameters.DA_y0, (OPJ_INT32)parameters.DA_x1,
+            (OPJ_INT32)parameters.DA_y1))
+      {
+         fprintf(stderr,	"ERROR -> opj_decompress: failed to set the decoded area\n");
+         opj_stream_destroy(l_stream);
+         opj_destroy_codec(l_codec);
+         opj_image_destroy(image);
+         return EXIT_FAILURE;
+      }
+      
+      /* Get the decoded image */
+      if (!(opj_decode(l_codec, l_stream, image) && opj_end_decompress(l_codec,	l_stream)))
+      {
+         fprintf(stderr,"ERROR -> opj_decompress: failed to decode image!\n");
+         opj_destroy_codec(l_codec);
+         opj_stream_destroy(l_stream);
+         opj_image_destroy(image);
+         return EXIT_FAILURE;
+      }
    }
+   else
+   {
+      if (!opj_get_decoded_tile(l_codec, l_stream, image, parameters.tile_index))
+      {
+         fprintf(stderr, "ERROR -> opj_decompress: failed to decode tile!\n");
+         opj_destroy_codec(l_codec);
+         opj_stream_destroy(l_stream);
+         opj_image_destroy(image);
+         return EXIT_FAILURE;
+      }
+      fprintf(stdout, "tile %d is decoded!\n\n", parameters.tile_index);
+   }
+   
+   /* Close the byte stream */
+   opj_stream_destroy(l_stream);
 
+   /* Calualate buffer size to hold decoded image */
    size = image->numcomps * image->comps[0].w * image->comps[0].h;
 
    /* only support unsigned jp2 image */

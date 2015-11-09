@@ -47,8 +47,10 @@
 # Organization:         NIST/ITL
 # Host System:          GNU GCC/GMAKE GENERIC (UNIX)
 # Date Created:	        2009/01/12 by Joseph Konczal
-#			    copied from an2k2txt and modified for
-#		            chkan2k by global string substitution
+#			            copied from an2k2txt and modified for
+#		                chkan2k by global string substitution
+#                       08/19/2014 (Kenneth Ko) - add OpenJPEG2 support
+#                       02/25/2015 (Kenneth Ko) - Renamed OPENJPEG to OPENJP2
 #
 # ******************************************************************************
 #
@@ -77,10 +79,10 @@ LIBS	:= \
 	$(EXPORTS_LIB_DIR)/libjasper.a
 endif
 #
-ifeq ($(NBIS_OPENJPEG_FLAG),-D__NBIS_OPENJPEG__)
+ifeq ($(NBIS_OPENJP2_FLAG),-D__NBIS_OPENJP2__)
 LIBS	:= \
 	$(LIBS) \
-	$(EXPORTS_LIB_DIR)/libopenjpeg.a 
+	$(EXPORTS_LIB_DIR)/libopenjp2.a 
 endif
 #
 ifeq ($(NBIS_PNG_FLAG),-D__NBIS_PNG__)

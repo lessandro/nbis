@@ -1604,7 +1604,7 @@ int write_frame_header_wsq(
       return(ret);
    if((ret = write_ushort(shrt_dat, outfp)))
       return(ret);
-   if((ret = write_byte(0, outfp)))
+   if((ret = write_byte(2, outfp)))
       return(ret);
    if((ret = write_ushort(0, outfp)))
       return(ret);
@@ -1688,7 +1688,7 @@ int putc_frame_header_wsq(
       return(ret);
    if((ret = putc_ushort(shrt_dat, odata, oalloc, olen)))
       return(ret);
-   if((ret = putc_byte(0, odata, oalloc, olen)))
+   if((ret = putc_byte(2, odata, oalloc, olen)))
       return(ret);
    if((ret = putc_ushort(0, odata, oalloc, olen)))
       return(ret);

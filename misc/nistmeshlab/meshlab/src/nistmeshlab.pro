@@ -16,6 +16,8 @@ SUBDIRS       = common \
 #-				meshlabplugins/io_expe \
 				meshlabplugins/io_nistxyz \
 				meshlabplugins/io_nistraw \
+				meshlabplugins/io_nistwsq \
+				meshlabplugins/io_nistpng \
 #-				meshlabplugins/io_pdb \
 #-				meshlabplugins/filter_ao \
 #-				meshlabplugins/filter_autoalign \

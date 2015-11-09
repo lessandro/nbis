@@ -50,6 +50,7 @@ of the software.
       DATE:    09/09/2004
       UPDATED: 03/15/2005 by MDG
 			   02/28/2007 by Kenneth Ko
+      UPDATED: 07/10/2014 by Kenneth Ko 
 
       Contains routines responsible for parsing various types of
       column-formatted text files.
@@ -155,13 +156,21 @@ int read_strstr_file(char *ifile, char ***ostr1list, char ***ostr2list,
          fclose(fp);
          return(-6);
       }
-      if((str1list[i] = strdup(tmpstr1)) == (char *)NULL){
-         fprintf(stderr, "ERROR : read_strstr_file : strdup : str1list[%d]\n",
+
+      size_t len1 = strlen(tmpstr1) + 1;
+      char *value1 = malloc(len1);
+      if (value1 != (char *)NULL){
+         strncpy(value1, tmpstr1, len1);
+         str1list[i] = value1;
+      }
+      else{
+         fprintf(stderr, "ERROR : read_strstr_file : malloc : str1list[%d]\n",
                  i);
          if(alloc_flag){
-            for(j = 0; j < i; j++){
+            for(j = 0; j < i; j++)
+            {
                 free(str1list[j]);
-                free(str2list[j]);
+                free(str2list[j]);               
             }
             free(str1list);
             free(str2list);
@@ -169,8 +178,15 @@ int read_strstr_file(char *ifile, char ***ostr1list, char ***ostr2list,
          fclose(fp);
          return(-7);
       }
-      if((str2list[i] = (char *)strdup(tmpstr2)) == (char *)NULL){
-         fprintf(stderr, "ERROR : read_strstr_file : strdup : str2list[%d]\n",
+
+      size_t len2 = strlen(tmpstr2) + 1;
+      char *value2 = malloc(len2);
+      if (value2 != (char *)NULL){
+         strncpy(value2, tmpstr2, len2);
+         str2list[i] = value2;
+      }
+      else{
+         fprintf(stderr, "ERROR : read_strstr_file : malloc : str2list[%d]\n",
                  i);
          if(alloc_flag){
             for(j = 0; j < i; j++){

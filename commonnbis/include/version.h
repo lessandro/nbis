@@ -46,7 +46,7 @@ of the software.
 #define _VERSION_H
 
 #define ANSI_NIST_VERSION	"ANSI/NIST-ITL 1-2007"
-#define NBIS_NON_EXPORT_CONTROL_VERSION	"Release 4.0.0"
+#define NBIS_NON_EXPORT_CONTROL_VERSION	"Release 5.0.0"
 
 #define  getVersion() \
    printf("Standard Version: %s\nNBIS Non-Export Control Software Version: " \

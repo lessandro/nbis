@@ -48,6 +48,7 @@ of the software.
       FILE:    XYTREPS.C
       AUTHOR:  Michael D. Garris
       DATE:    09/16/2004
+      UPDATED: 01/11/2012
 
       Contains routines useful in converting minutiae in LFS "native"
       representation into other representations, such as
@@ -57,6 +58,7 @@ of the software.
                ROUTINES:
                         lfs2nist_minutia_XTY()
                         lfs2m1_minutia_XTY()
+                        lfs2nist_format()
 
 ***********************************************************************/
 
@@ -74,9 +76,6 @@ of the software.
       ox       - NIST internal based x-pixel coordinate
       oy       - NIST internal based y-pixel coordinate
       ot       - NIST internal based minutia direction/orientation
-   Return Code:
-      Zero     - successful completion
-      Negative - system error
 **************************************************************************/
 void lfs2nist_minutia_XYT(int *ox, int *oy, int *ot,
                           const MINUTIA *minutia, const int iw, const int ih)
@@ -119,9 +118,6 @@ void lfs2nist_minutia_XYT(int *ox, int *oy, int *ot,
       ox       - M1 based x-pixel coordinate
       oy       - M1 based y-pixel coordinate
       ot       - M1 based minutia direction/orientation
-   Return Code:
-      Zero     - successful completion
-      Negative - system error
 **************************************************************************/
 void lfs2m1_minutia_XYT(int *ox, int *oy, int *ot, const MINUTIA *minutia)
 {
@@ -152,3 +148,34 @@ void lfs2m1_minutia_XYT(int *ox, int *oy, int *ot, const MINUTIA *minutia)
    *oy = y;
    *ot = t;
 }
+
+/*************************************************************************
+**************************************************************************
+#cat:   lfs2nist_format - Takes a minutiae data structure and converts
+#cat:                     the XYT minutiae attributes in LFS native
+#cat:                     representation to NIST internal representation
+   Input:
+      iminutiae - minutiae data structure
+      iw        - width (in pixels) of the grayscale image
+      ih        - height (in pixels) of the grayscale image
+   Output:
+      iminutiae - overwrite each minutia element in the minutiae data 
+                  sturcture convernt to nist internal minutiae format
+**************************************************************************/
+void lfs2nist_format(MINUTIAE *iminutiae, int iw, int ih)                     
+{
+   int i, ox, oy, ot, oq;
+   MINUTIA *minutia;
+
+   for (i = 0; i < iminutiae->num; i++)
+   {
+      minutia = iminutiae->list[i];
+      lfs2nist_minutia_XYT(&ox, &oy, &ot, minutia, iw, ih);
+      oq = sround(minutia->reliability * 100.0);
+      minutia->x = ox;
+      minutia->y = oy;
+      minutia->direction = ot;
+      minutia->reliability = (double)oq;
+   }
+}
+

@@ -55,6 +55,7 @@ of the software.
                UPDATED: 03/11/2005 by MDG
                UPDATED: 01/31/2008 by Kenneth Ko
                UPDATED: 09/04/2008 by Kenneth Ko
+               UPDATED: 01/11/2012 by Kenneth Ko
 
                FILE:    LFS.H
 
@@ -1232,7 +1233,7 @@ extern int closest_dir_dist(const int, const int, const int);
 extern void lfs2nist_minutia_XYT(int *, int *, int *,
                                 const MINUTIA *, const int, const int);
 extern void lfs2m1_minutia_XYT(int *, int *, int *, const MINUTIA *);
-
+extern void lfs2nist_format(MINUTIAE *, int, int);
 
 /*************************************************************************/
 /*        EXTERNAL GLOBAL VARIABLE DEFINITIONS                           */

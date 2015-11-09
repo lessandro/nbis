@@ -45,6 +45,48 @@ of the software.
                                  Change History
                    ----------------------------------------------
 
+03/04/2015  NBIS: Rel 5.0.0
+            - Updated OpenJPEG library support from version 1.4 to 2.1.
+            - The official NIST JPEG2000 Reference CODEC (based on
+              OpenJPEG 2.1) has been included in this release for the first
+              time, and replaces the previously generic CJP2K encoder and
+              DJP2K decoder.
+            - Replaced non-POSIX strdup() with POSIX malloc() and POSIX
+              strncpy() to prevent pointer conversion error.
+            - New installation instructions for CYGWIN.
+            - Updated installation instructions for LINUX, MAC OSX and
+              Windows operating systems.
+            - Various minor enhancements and bug fixes.
+
+10/30/2013  NBIS: Rel 4.2.0
+            - Fixed compile issues with MAC OSX 10.8.X. Forced OpenJPEG only
+              uses LMCS-1.
+            - Fixed 32bit OpenJPEG build issue on a 64bit LINUX environment 
+              when --m32 option is set. 
+            - Remove return statements from void-returning functions in 
+              xytrepsc.c, whose presence raises an error in newer compilers.
+            - Add -l compile option to link with X11 for PCASYS application.
+            - Add missing X11 include for libpca build.  
+            - Enhancements and bug fixes for MSYS installation.
+
+05/21/2012  NBIS: Rel 4.1.0
+            - New installation instruction for LINUX, MAC OSX and Windows
+              operating system.
+            - Remove operating system architecture check from setup.sh.
+            - Default build with -fPIC compiling option.
+            - Fixed OpenJPEG build issue relate to -m32 and -m64 compiling
+              operation.
+            - Bug fix on libnbis.a creation.
+            - JASPER library support is deprecated.
+            - Add --without-OPENJPEG option to disable OpenJPEG image 
+              format support.
+            - Add two new functions (lfs2nist_format and bz_prune) to support 
+              in-memory write/read on minutiae detection to XYT structure.
+
+10/16/2011  NBIS: Rel 4.0.1
+            - Correct a flaw introduced in Rel 4.0.0 where a binary object
+              larger than four bytes fails to be read from an AN2K record.
+
 09/15/2011
             NBIS: Rel 4.0.0
             - Updated OpenJPEG library support from version 1.3 to 1.4.

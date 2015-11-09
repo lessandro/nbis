@@ -250,7 +250,9 @@ int read_raw_or_ihead_wsq(const int iheadflag, char *ifile, IHEAD **ohead,
    height = *oheight;
    /* If image is too small ... */
    if(width < MIN_IMG_DIM || height < MIN_IMG_DIM) {
-      free(*ohead);
+      if(iheadflag) {
+         free(*ohead);
+      }
       free(*odata);
       fprintf(stderr,
               "ERROR: read_raw_or_ihead_wsq : Image must be at least %d X %d\n",

@@ -70,6 +70,7 @@ int lookupfet(char **ovalue, char *feature, FET *fet)
 {
   int item;
   char *value;
+  size_t len = 0;
 
   for (item = 0;
        (item < fet->num) && (strcmp(fet->names[item],feature) != 0);
@@ -78,11 +79,13 @@ int lookupfet(char **ovalue, char *feature, FET *fet)
      return(FALSE);
   }
   if(fet->values[item] != (char *)NULL){
-      value = strdup(fet->values[item]);
+      len = strlen(fet->values[item]) + 1;
+      value = malloc(len);
       if (value == (char *)NULL){
-         fprintf(stderr, "ERROR : lookupfet : strdup : value\n");
+         fprintf(stderr, "ERROR : lookupfet : malloc : value\n");
          return(-2);
      }
+     strncpy(value, fet->values[item], len);
   }
   else
       value = (char *)NULL;

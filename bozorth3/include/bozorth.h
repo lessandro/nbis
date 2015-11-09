@@ -183,7 +183,7 @@ struct cell {
 };
 
 /**************************************************************************/
-/* In BZ_IO : Supports the loading and manipulation of XYT data */
+/* In BZ_IO : Supports the loading and manipulation of XYT and XYTQ data */
 /**************************************************************************/
 #define MAX_FILE_MINUTIAE       1000 /* bz_load() */
 
@@ -194,7 +194,17 @@ struct xyt_struct {
 	int thetacol[ MAX_BOZORTH_MINUTIAE ];
 };
 
+struct xytq_struct {
+        int nrows;
+        int xcol[     MAX_FILE_MINUTIAE ];
+        int ycol[     MAX_FILE_MINUTIAE ];
+        int thetacol[ MAX_FILE_MINUTIAE ];
+        int qualitycol[ MAX_FILE_MINUTIAE ];
+};
+
+
 #define XYT_NULL ( (struct xyt_struct *) NULL ) /* bz_load() */
+#define XYTQ_NULL ( (struct xytq_struct *) NULL ) /* bz_load() */
 
 
 /**************************************************************************/
@@ -275,6 +285,7 @@ extern char *get_next_file(char *, FILE *, FILE *, int *, int *, char *,
 extern char *get_score_filename(const char *, const char *);
 extern char *get_score_line(const char *, const char *, int, int, const char *);
 extern struct xyt_struct *bz_load(const char *);
+extern struct xyt_struct *bz_prune(struct xytq_struct *, int);
 extern int fd_readable(int);
 /* In: BZ_SORT.C */
 extern int sort_quality_decreasing(const void *, const void *);

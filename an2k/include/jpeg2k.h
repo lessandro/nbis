@@ -49,7 +49,10 @@ of the software.
 
       AUTHORS: Kenneth Ko
       DATE:    12/15/2007
-
+      DATE:    08/19/2014
+               02/25/2015 (Kenneth Ko) - Updated everything related to
+                                         OPENJPEG to OPENJP2
+               02/26/2015 (Kenneth Ko) - Update sbuffer sturcture
 ***********************************************************************/
 #ifndef _JPEG2K_H
 #define _JPEG2K_H
@@ -60,25 +63,33 @@ of the software.
 	#include <jasper/jasper.h>
 #endif
 
-#ifdef __NBIS_OPENJPEG__
-	#include <openjpeg/openjpeg.h>
+#ifdef __NBIS_OPENJP2__
+	#include <openjp2/openjpeg.h>
+   #include "math.h"
 #endif
 
 /*********************************************************************/
 
 #ifdef __NBIS_JASPER__
-	int jpeg2k_decode_mem(IMG_DAT **, int *, unsigned char *, const int);
-	int img_dat_generate(IMG_DAT **, jas_image_t *);
+   int jpeg2k_decode_mem(IMG_DAT **, int *, unsigned char *, const int);
+   int img_dat_generate(IMG_DAT **, jas_image_t *);
 #endif
 
-#ifdef __NBIS_OPENJPEG__
-	int openjpeg2k_decode_mem(IMG_DAT **, int *, unsigned char *, const int);
-/*
-	int image_to_raw(opj_image_t *, signed char *, unsigned char *);
-*/
-        int image_to_raw(opj_image_t *, unsigned char *);
-        int img_dat_generate_openjpeg(IMG_DAT **oimg_dat, opj_image_t *image, unsigned char *);
-	int get_file_format(char *);
+#ifdef __NBIS_OPENJP2__
+   struct opj_dstream
+   {
+      OPJ_SIZE_T status;
+      unsigned char * data;
+   };
+
+   static void opj_free_from_idata(void *);
+   static OPJ_UINT64 opj_get_data_length_from_idata(OPJ_SIZE_T);
+   static OPJ_SIZE_T opj_read_from_idata(void *, OPJ_SIZE_T, void *);
+
+   int openjpeg2k_decode_mem(IMG_DAT **, int *, unsigned char *, const int);
+   int image_to_raw(opj_image_t *, unsigned char *);
+   int img_dat_generate_openjpeg(IMG_DAT **, opj_image_t *, unsigned char *);
+   int get_file_format(char *);
 #endif
 
-#endif /* !_JPEG2K_H */ 
+#endif /* !_JPEG2K_H */

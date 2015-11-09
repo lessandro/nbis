@@ -52,6 +52,7 @@ of the software.
       DATE:    09/20/2004
       UPDATED: 05/09/2005 by MDG
       UPDATED: 04/10/2008 by Joseph C. Konczal - expanded ANSI/NIST support
+      UPDATED: 07/10/2014 by Kenneth Ko
 
 #cat: nfseg - Takes a single finger or 4 finger plain impression,
 #cat:         grayscale fingerprint image and segments the fingerprint(s)
@@ -353,7 +354,8 @@ static void procargs(int argc, char **argv)
 /***********************************************************************/
 int main(int argc, char *argv[])
 {
-   unsigned char *data, **pdata, *filename;
+   char *filename;
+   unsigned char *data, **pdata;
    int ret, i, w, h, d, img_type, dlen;
    seg_rec_coords *fing_boxes;
    int ppi, lossyflag = 0;
@@ -431,9 +433,10 @@ int main(int argc, char *argv[])
       }
 
       if (NULL == (filename = malloc(strlen(ifile)+1))) {
-	 fprintf(stderr, "ERROR : cannot allocate %d bytes for filename %s\n",
-		 strlen(ifile)+1, ifile);
-	 exit(EXIT_FAILURE);
+         int len = strlen(ifile)+1;
+         fprintf(stderr, "ERROR : cannot allocate %d bytes for filename %s\n",
+                 len, ifile);
+         exit(EXIT_FAILURE);
       }
       
       /* this loop's index jumps from one grayprint to the next */

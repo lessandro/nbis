@@ -180,9 +180,9 @@ static int i_read_ANSI_NIST_binary_field(FILE *fpin, AN2KBDB *buf,
 
       for(i = 0; i < num_bytes; i++){
           if (fpin != NULL)
-              ret = read_binary_item_data(fpin, &itemvalue, num_bytes);
+              ret = read_binary_item_data(fpin, &itemvalue, 1);
           else
-              ret = scan_binary_item_data(buf, &itemvalue, num_bytes);
+              ret = scan_binary_item_data(buf, &itemvalue, 1);
           if(ret != 0){
             free_ANSI_NIST_field(field);
             return(ret);

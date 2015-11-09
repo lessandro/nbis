@@ -74,7 +74,7 @@ SRC	:= combine.c \
 	sgmnt.c \
 	trnsfrm.c
 #
-EXT_INCS	:= -I$(EXPORTS_INC_DIR)
+EXT_INCS	:= -I$(EXPORTS_INC_DIR) -I$(X11_INC)
 #
 include $(DIR_ROOT_BUILDUTIL)/pcasysx_lib.mak
 #

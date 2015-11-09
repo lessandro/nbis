@@ -53,7 +53,9 @@ of the software.
                01/24/2008 by Kenneth Ko
                01/06/2009 by Kenneth Ko - add support for HPUX compile
       UPDATED: 02/04/2009 by Joseph C. Konczal
-      UPDATED: 03/25/2011 by Kenneth Ko
+	  UPDATED: 03/25/2011 by Kenneth Ko
+               02/25/2015 (Kenneth Ko) - Updated everything related to
+                                         OPENJPEG to OPENJP2
       
       Contains routines responsible for taking a formatted datastream
       of potentially compressed image pixels, identifying the format
@@ -92,7 +94,7 @@ of the software.
 #ifdef __NBIS_JASPER__
    #include <jpeg2k.h>
 #endif
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
    #include <jpeg2k.h>
 #endif
 
@@ -267,7 +269,7 @@ int read_and_decode_pcasys(char *ifile, unsigned char **odata, int *ow,
            class = *oclass;
            break;
 #endif
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
       case JP2_IMG:
            if((ret = openjpeg2k_decode_mem(&img_dat, &lossyflag, idata, ilen))){
               free(idata);

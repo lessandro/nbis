@@ -53,6 +53,8 @@ of the software.
       UPDATE:  09/03/2008 by Kenneth Ko
       UPDATE:  10/02/2008 by Joseph C. Konczal - support 8-bit jp2
       UPDATE:  01/06/2009 by Kenneth Ko - add support for HPUX compile
+               02/25/2015 (Kenneth Ko) - Updated everything related to
+                                         OPENJPEG to OPENJP2
 
       Contains routines responsible for decoding image data contained
       in image records according to the ANSI/NIST 2007 standard.
@@ -76,7 +78,7 @@ of the software.
 #ifdef __NBIS_JASPER__
 	#include <jpeg2k.h>
 #endif
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
 	#include <jpeg2k.h>
 #endif
 #ifdef __NBIS_PNG__
@@ -641,7 +643,7 @@ int decode_tagged_field_image(unsigned char **odata,
       }
    }
 #endif
-#ifdef __NBIS_OPENJPEG__
+#ifdef __NBIS_OPENJP2__
    /* If JPEG2K compress ... */
    else if((strcmp(img_comp, COMP_JPEG2K) == 0) ||
            (strcmp(img_comp, COMP_JPEG2KL) == 0)){

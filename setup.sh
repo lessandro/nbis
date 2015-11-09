@@ -70,7 +70,31 @@
 #                                                   force architecture on
 #                                                   cross-compile capable 
 #                                                   systems.
-#			05/02/2011 (Kenneth Ko)
+#                       05/02/2011 (Kenneth Ko) - Update licensing information.
+#                                                 Add fPIC flag.
+#                                                 Build PNG libaray as default 
+#                                                 on MSYS.
+#                       05/09/2012 (Kenneth Ko) - Remove 32-bit or 64-bit 
+#                                                 architecture check.
+#                                                 Default to build with fPIC.
+#                                                 Remove --with-JASPER support.
+#                                                 Add --without-OPENJPEG option
+#                                                 to disable building OpenJPEG
+#                                                 library.
+#                                                 Check arch.mak exist or not 
+#                                                 before delete.
+#                       10/22/2013 (Kenneth Ko) - Bug fix for MSYS installation. 
+#                       05/08/2014 (John Grantham) - Added support for openjpeg2
+#                       08/05/2014 (John Grantham) - Added --CYGWIN option to
+#                                                    support building openjpeg2,
+#                                                    which requires passing a
+#                                                    flag to CMake for CYGWIN
+#                       02/17/2015 (John Grantham) - Renamed "openjpeg2" to
+#                                                    "openjp2"
+#                       02/24/2015 (Kenneth Ko)    - Renamed option
+#                                                    "--without-openjpeg" to
+#                                                    "--without-openjp2"
+#
 #                                                  
 # ******************************************************************************
 #
@@ -101,10 +125,12 @@ X11_FLAG=1
 STDLIBS_FLAG=0
 NBIS_JASPER_FLAG=0
 NBIS_PNG_FLAG=1
-NBIS_OPENJPEG_FLAG=1
+NBIS_OPENJP2_FLAG=1
 X86_64_FLAG=-1
 TARGET_OS=0
 MSYS_FLAG=0
+FPIC_FLAG=0
+CYGWIN_FLAG=0
 
 while [ $# -ge 1 ]; do
 	case $1 in
@@ -112,14 +138,10 @@ while [ $# -ge 1 ]; do
 		X11_FLAG=0;;
 	--STDLIBS)
 		STDLIBS_FLAG=1
-		NBIS_JASPER_FLAG=0
 		NBIS_PNG_FLAG=0
-		NBIS_OPENJPEG_FLAG=0;;
-	--with-JASPER)
-		NBIS_JASPER_FLAG=1
-		NBIS_OPENJPEG_FLAG=0;;
-	--with-OPENJPEG)
-		NBIS_OPENJPEG_FLAG=1;;
+		NBIS_OPENJP2_FLAG=0;;
+	--without-OPENJP2)
+		NBIS_OPENJP2_FLAG=0;;
 	--64)         
 		X86_64_FLAG=1;;
 	--32)         
@@ -127,13 +149,16 @@ while [ $# -ge 1 ]; do
 	--SUPERDOME)
 		TARGET_OS=1
 		STDLIBS_FLAG=1
-		NBIS_JASPER_FLAG=0
 		NBIS_PNG_FLAG=0
-		NBIS_OPENJPEG_FLAG=0
 		X11_FLAG=0;;
 	--MSYS)
 		MSYS_FLAG=1
 		STDLIBS_FLAG=1
+		X11_FLAG=0;;
+	--CYGWIN)
+		CYGWIN_FLAG=1
+		STDLIBS_FLAG=1
+		FPIC_FLAG=0
 		X11_FLAG=0;;
 	*)
 		echo "No such option: $1"
@@ -176,9 +201,9 @@ fi
 #------------------------------- Set Current Path --------------------------------
 # Set Path
 if [ $MSYS_FLAG -eq 1 ]; then
-        MAIN_DIR=$FINAL_INSTALLATION_DIR
+        MAIN_DIR=$PWD
         cd ..
-        NBIS_DIR=`dirname $MAIN_DIR;`
+        NBIS_DIR=`dirname $PWD;`
 else
         MAIN_DIR=$PWD
         cd ..
@@ -198,7 +223,7 @@ if [ $MSYS_FLAG -eq 1 ]; then
 	CP=cp
 else
 	RM=`which rm`
-	CC=`which cc`
+	CC=gcc
 	CP=`which cp`
 fi
 
@@ -223,29 +248,8 @@ fi
 
 endian=`head -n 1 ${endianFile}`
 
-#----------------------------- Detect architectures ----------------------------
-CAT=`which cat`
-architectureFile=./architecture.out
-
-if [ $X86_64_FLAG -eq 1 ]; then
-	# Check for errors on compilation
-	`${CC} -m64 architecture.c -o architecture &> ${architectureFile}`
-	arch_output=`${CAT} ${architectureFile}`
-	if [ "$arch_output" != "" ]; then
-		echo "Failed Setup - This machine does not support 64-bit compilation."
-		`${RM} ${architectureFile}`
-		exit 1  
-	fi
-
-	# Check for errors when running the 64-bit binary
-	`./architecture &> ${architectureFile}`
-	arch_output=`${CAT} ${architectureFile}`
-	if [ "$arch_output" != "1" ]; then
-		echo "Failed Setup - This machine does not support 64-bit compilation."
-		`${RM} ${architectureFile} architecture`
-		exit 1  
-	fi
-fi
+# See if the compiler supports generating position independent code
+FPIC_FLAG=1
 
 #----------------------------- Use "sed" to Modify ------------------------------
 # Set PACKAGES varabile in rules.mak.src which depend on the export control
@@ -253,7 +257,7 @@ fi
 IJG='ijg'
 JPEG2K='jpeg2k'
 NBIS_PNG='png'
-OPENJPEG='openjpeg'
+OPENJP2='openjp2' 
 REG_LIBS='commonnbis an2k bozorth3 imgtools mindtct nfseg nfiq pcasys'
 
 if [ $NBIS_JASPER_FLAG -eq 1 -a $NBIS_PNG_FLAG -eq 0 ]; then
@@ -266,8 +270,8 @@ elif [ $NBIS_JASPER_FLAG -eq 0 -a $NBIS_PNG_FLAG -eq 0 ]; then
 	IMAGE_LIBS="${IJG}"
 fi
 
-if [ $NBIS_OPENJPEG_FLAG -eq 1 ]; then
-	IMAGE_LIBS="${IMAGE_LIBS} ${OPENJPEG}"
+if [ $NBIS_OPENJP2_FLAG -eq 1 ]; then
+	IMAGE_LIBS="${IMAGE_LIBS} ${OPENJP2}"
 fi
 
 PACKAGES="${IMAGE_LIBS} ${REG_LIBS}"
@@ -305,6 +309,10 @@ elif [ $NBIS_JASPER_FLAG -eq 0 ]; then
 fi
 
 # Use 'sed' command to modify ARCH_FLAG
+if [ -e arch.mak ]; then
+	`${RM} arch.mak`
+fi
+
 if [ $X86_64_FLAG -eq -1 ]; then
 	ARCH_FLAG=""
 	echo "ARCH_FLAG = " >> arch.mak
@@ -315,7 +323,11 @@ elif [ $X86_64_FLAG -eq 0 ]; then
 	ARCH_FLAG="-m32"
 	echo "ARCH_FLAG = -m32" >> arch.mak
 fi
-cat rules.mak.temp8 | sed 's,SED_ARCH_FLAG,'$ARCH_FLAG',' > rules.mak.temp9
+if [ $FPIC_FLAG -eq 1 ] && [ $CYGWIN_FLAG -eq 0 ] && [ $MSYS_FLAG -eq 0 ]; then
+	ARCH_FLAG="$ARCH_FLAG -fPIC"
+fi
+echo "ARCH_FLAG = $ARCH_FLAG" >> arch.mak
+cat rules.mak.temp8 | sed "s,SED_ARCH_FLAG,$ARCH_FLAG," > rules.mak.temp9
 
 # Use 'sed' command to modify P_FLAG
 if [ $NBIS_PNG_FLAG -eq 1 ]; then
@@ -344,16 +356,26 @@ elif [ $OS_FLAG -eq 0 ]; then
 	cat rules.mak.temp11 | sed 's,SED_OS_FLAG,'$O_FLAG',' > rules.mak.temp12
 fi
 
-# Use 'sed' commdand to modify NBIS_OPENJPEG_FLAG
-if [ $NBIS_OPENJPEG_FLAG -eq 1 ]; then
-	O_FLAG="-D__NBIS_OPENJPEG__"
-	cat rules.mak.temp12 | sed 's,SED_NBIS_OPENJPEG_FLAG,'$O_FLAG',' > rules.mak
-elif [ $NBIS_OPENJPEG_FLAG -eq 0 ]; then
-	O_FLAG="";
-	cat rules.mak.temp12 | sed 's,SED_NBIS_OPENJPEG_FLAG,'$O_FLAG',' > rules.mak
+# Use 'sed' commdand to modify CYGWIN_FLAG
+if [ $CYGWIN_FLAG -eq 1 ]; then
+	CYG_FLAG="-D__CYGWIN__"
+	cat rules.mak.temp12 | sed 's,SED_CYGWIN_FLAG,'$CYG_FLAG',' > rules.mak.temp13
+elif [ $CYGWIN_FLAG -eq 0 ]; then
+	CYG_FLAG=""
+	cat rules.mak.temp12 | sed 's,SED_CYGWIN_FLAG,'$CYG_FLAG',' > rules.mak.temp13
 fi
 
-rm -f rules.mak.temp1 rules.mak.temp2 rules.mak.temp3 rules.mak.temp4 rules.mak.temp5 rules.mak.temp6 rules.mak.temp7 rules.mak.temp8 rules.mak.temp9 rules.mak.temp10 rules.mak.temp11 rules.mak.temp12
+
+# Use 'sed' commdand to modify NBIS_OPENJP2_FLAG
+if [ $NBIS_OPENJP2_FLAG -eq 1 ]; then
+	O_FLAG="-D__NBIS_OPENJP2__"
+	cat rules.mak.temp13 | sed 's,SED_NBIS_OPENJP2_FLAG,'$O_FLAG',' > rules.mak
+elif [ $NBIS_OPENJP2_FLAG -eq 0 ]; then
+	O_FLAG="";
+	cat rules.mak.temp13 | sed 's,SED_NBIS_OPENJP2_FLAG,'$O_FLAG',' > rules.mak
+fi
+
+rm -f rules.mak.temp1 rules.mak.temp2 rules.mak.temp3 rules.mak.temp4 rules.mak.temp5 rules.mak.temp6 rules.mak.temp7 rules.mak.temp8 rules.mak.temp9 rules.mak.temp10 rules.mak.temp11 rules.mak.temp12 rules.mak.temp13
 
 cd ${MAIN_DIR}/an2k/include
 sed 's,SED_INSTALL_DATA_DIR_STRING,'$INSTALL_DATA_DIR_STRING',' < an2k.h.src > an2k.h

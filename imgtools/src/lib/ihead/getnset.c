@@ -49,6 +49,7 @@ of the software.
       AUTHOR:  Michael Garris
       DATE:    04/26/1989
 	  UPDATED: 02/28/2007
+          UPDATED: 07/10/2014 by Kenneth Ko
 
       Contains routines responsible for retrieving and assigning
       attribute values to an IHead header.
@@ -152,9 +153,21 @@ of the software.
 
 char *get_id(IHEAD *head)
 {
-  if (head==NULL)
-     fatalerr("get_id","pointer head is NULL",NULL);
-  return(strdup(head->id));
+   char *value;
+   size_t len = 0;   
+   
+   if (head==NULL)
+      fatalerr("get_id","pointer head is NULL",NULL);
+  
+   len = strlen(head->id) + 1;
+   value = malloc(len);
+   
+   if (value == (char *)NULL)
+      fatalerr("get_id","malloc of allocate buffer failed",NULL);
+   else
+      strncpy(value, head->id, len); 
+   
+   return(value);
 }
 
 int set_id(IHEAD *i, char *path)
@@ -175,9 +188,21 @@ int set_id(IHEAD *i, char *path)
 
 char *get_created(IHEAD *head)
 {
-  if (head==NULL)
-     fatalerr("get_created","pointer head is NULL",NULL);
-  return((char *)strdup(head->created));
+   char *value;
+   size_t len = 0;
+   
+   if (head==NULL)
+      fatalerr("get_created","pointer head is NULL",NULL);
+
+   len = strlen(head->created) + 1;
+   value = malloc(len);
+   
+   if (value == (char *)NULL)
+      fatalerr("get_created","malloc of allocate buffer failed",NULL);
+   else
+      strncpy(value, head->created, len);
+
+   return(value);
 }
 
 int set_created(IHEAD *head)
@@ -571,9 +596,21 @@ int set_lr_rl(IHEAD *head, int lr_rl)
 
 char *get_parent(IHEAD *head)
 {
-  if (head==NULL)
-     fatalerr("get_parent","pointer head is NULL",NULL);
-  return((char *)strdup(head->parent));
+   char *value;
+   size_t len = 0;
+   
+   if (head==NULL)
+      fatalerr("get_parent","pointer head is NULL",NULL);
+   
+   len = strlen(head->parent) + 1;
+   value = malloc(len);
+   
+   if (value == (char *)NULL)
+      fatalerr("get_parent","malloc of allocate buffer failed",NULL);
+   else
+      strncpy(value, head->parent, len);
+
+   return(value); 
 }
 
 /* LINTLIBRARY */

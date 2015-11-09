@@ -75,6 +75,7 @@ FET *readfetfile(char *file)
    FILE *fp;
    FET *fet;
    char c,buf[MAXFETLENGTH];
+   size_t len = 0;
 
    if ((fp = fopen(file,"rb")) == (FILE *)NULL)
       syserr("readfetfile","fopen",file);
@@ -85,14 +86,18 @@ FET *readfetfile(char *file)
       ungetc(c, fp);
       if (fet->num >= fet->alloc)
          reallocfet(fet, fet->alloc + MAXFETS);
-      fet->names[fet->num] = strdup(buf);
+      len = strlen(buf) + 1;
+      fet->names[fet->num] = malloc(len);
       if(fet->names[fet->num] == (char *)NULL)
-         syserr("readfetfile","strdup","fet->names[]");
+         syserr("readfetfile","malloc","fet->names[]");
+      strncpy(fet->names[fet->num], buf, len);
       fgets(buf,MAXFETLENGTH-1,fp);
       buf[strlen(buf)-1] = '\0';
-      fet->values[fet->num] = (char *)strdup(buf);
+      len = strlen(buf) + 1;
+      fet->values[fet->num] = malloc(len);
       if(fet->values[fet->num] == (char *)NULL)
-         syserr("readfetfile","strdup","fet->values[]");
+         syserr("readfetfile","malloc","fet->values[]");
+      strncpy(fet->values[fet->num], buf, len);
       (fet->num)++;
    }
    fclose(fp);
@@ -106,6 +111,7 @@ int readfetfile_ret(FET **ofet, char *file)
    FILE *fp;
    FET *fet;
    char c,buf[MAXFETLENGTH];
+   size_t len = 0;
 
    if ((fp = fopen(file,"rb")) == (FILE *)NULL){
       fprintf(stderr, "ERROR : readfetfile_ret : fopen : %s\n", file);
@@ -127,22 +133,26 @@ int readfetfile_ret(FET **ofet, char *file)
             return(ret);
          }
       }
-      fet->names[fet->num] = (char *)strdup(buf);
+      len = strlen(buf) + 1;
+      fet->names[fet->num] = malloc(len);
       if(fet->names[fet->num] == (char *)NULL){
-         fprintf(stderr, "ERROR : readfetfile_ret : strdup : fet->names[]\n");
+         fprintf(stderr, "ERROR : readfetfile_ret : malloc : fet->names[]\n");
          fclose(fp);
          freefet(fet);
          return(-3);
       }
+      strncpy(fet->names[fet->num], buf, len);
       fgets(buf,MAXFETLENGTH-1,fp);
       buf[strlen(buf)-1] = '\0';
-      fet->values[fet->num] = (char *)strdup(buf);
+      len = strlen(buf) + 1;
+      fet->values[fet->num] = malloc(len);
       if(fet->values[fet->num] == (char *)NULL){
-         fprintf(stderr, "ERROR : readfetfile_ret : strdup : fet->values[]\n");
+         fprintf(stderr, "ERROR : readfetfile_ret : malloc : fet->values[]\n");
          fclose(fp);
          freefet(fet);
          return(-4);
       }
+      strncpy(fet->values[fet->num], buf, len);
       (fet->num)++;
    }
    fclose(fp);

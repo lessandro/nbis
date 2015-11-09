@@ -324,8 +324,8 @@ int segment_fingers(unsigned char *idata, const int iw, const int ih,
    else {
       fing_boxes[0].tlx = 0;
       fing_boxes[0].tly = 0;
-      fing_boxes[0].trx = w-1;
-      fing_boxes[0].try = 0;
+      fing_boxes[0].tRightX = w-1;
+      fing_boxes[0].tRightY = 0;
       fing_boxes[0].blx = 0;
       fing_boxes[0].bly = h-1;
       fing_boxes[0].brx = w-1;
@@ -352,8 +352,8 @@ int segment_fingers(unsigned char *idata, const int iw, const int ih,
       fing_boxes[0].tly = fing_boxes[0].dty;
       fing_boxes[0].blx = fing_boxes[0].dlx;
       fing_boxes[0].bly = fing_boxes[0].dby;
-      fing_boxes[0].trx = fing_boxes[0].drx;
-      fing_boxes[0].try = fing_boxes[0].dty;
+      fing_boxes[0].tRightX = fing_boxes[0].drx;
+      fing_boxes[0].tRightY = fing_boxes[0].dty;
       fing_boxes[0].brx = fing_boxes[0].drx;
       fing_boxes[0].bry = fing_boxes[0].dby;
       scale_seg_fingers(fing_boxes, nf, iw, ih, Z_FAC);
@@ -679,8 +679,8 @@ int get_fing_boxes(const int w, const int h, const float theta,
          fing_boxes[i].tly = edges[i].ty;
          fing_boxes[i].blx = edges[i].bx;
          fing_boxes[i].bly = edges[i].by;
-         fing_boxes[i].trx = edges[i+1].tx;
-         fing_boxes[i].try = edges[i+1].ty;
+         fing_boxes[i].tRightX = edges[i+1].tx;
+         fing_boxes[i].tRightY = edges[i+1].ty;
          fing_boxes[i].brx = edges[i+1].bx;
          fing_boxes[i].bry = edges[i+1].by;
       }
@@ -700,8 +700,8 @@ int get_fing_boxes(const int w, const int h, const float theta,
          drx = dr * st;
          fing_boxes[i].tlx = edges[i].tx - sround(dlx);
          fing_boxes[i].tly = edges[i].ty - sround(dly);
-         fing_boxes[i].trx = edges[i+1].tx - sround(drx);
-         fing_boxes[i].try = edges[i+1].ty - sround(dry);
+         fing_boxes[i].tRightX = edges[i+1].tx - sround(drx);
+         fing_boxes[i].tRightY = edges[i+1].ty - sround(dry);
 /* BOTTOM */
          dx1 = (float)edges[i+1].bx - (float)edges[i].bx;
          dy1 = (float)edges[i].by - (float)edges[i+1].by;
@@ -732,8 +732,8 @@ int get_fing_boxes(const int w, const int h, const float theta,
          drx = dr * st;
          fing_boxes[i].tlx = edges[i].tx + sround(dlx);
          fing_boxes[i].tly = edges[i].ty - sround(dly);
-         fing_boxes[i].trx = edges[i+1].tx + sround(drx);
-         fing_boxes[i].try = edges[i+1].ty - sround(dry);
+         fing_boxes[i].tRightX = edges[i+1].tx + sround(drx);
+         fing_boxes[i].tRightY = edges[i+1].ty - sround(dry);
 /* BOTTOM */
          dx1 = (float)edges[i+1].bx - (float)edges[i].bx;
          dy1 = (float)edges[i+1].by - (float)edges[i].by;
@@ -764,15 +764,15 @@ void get_fing_seg_pars(const float theta,
 
    for(i = 0; i < nf; i++) {
       if(theta == 0.0) {
-         fing_boxes[i].sw = fing_boxes[i].trx - fing_boxes[i].tlx;
+         fing_boxes[i].sw = fing_boxes[i].tRightX - fing_boxes[i].tlx;
          fing_boxes[i].sh = fing_boxes[i].bly - fing_boxes[i].tly;
          fing_boxes[i].sx = fing_boxes[i].tlx + (fing_boxes[i].sw/2);
          fing_boxes[i].sy = fing_boxes[i].tly + (fing_boxes[i].sh/2);
       }
       else {
          fing_boxes[i].theta = theta;
-         dxt = (float)(fing_boxes[i].trx - fing_boxes[i].tlx);
-         dyt = (float)(fing_boxes[i].try - fing_boxes[i].tly);
+         dxt = (float)(fing_boxes[i].tRightX - fing_boxes[i].tlx);
+         dyt = (float)(fing_boxes[i].tRightY - fing_boxes[i].tly);
          dx = sqrt((dxt*dxt) + (dyt*dyt));
          fing_boxes[i].sw = sround(dx);
          dxt = (float)(fing_boxes[i].blx - fing_boxes[i].tlx);
@@ -792,8 +792,8 @@ void get_fing_seg_pars(const float theta,
             fing_boxes[i].sy = fing_boxes[i].tly + sround(dyt);
          }
          else {
-            fing_boxes[i].sx = fing_boxes[i].trx - sround(dxt);
-            fing_boxes[i].sy = fing_boxes[i].try + sround(dyt);
+            fing_boxes[i].sx = fing_boxes[i].tRightX - sround(dxt);
+            fing_boxes[i].sy = fing_boxes[i].tRightY + sround(dyt);
          }
       }
    }
@@ -1355,8 +1355,8 @@ void adjust_fing_seg_pars(seg_rec_coords *fing_boxes, const int nf)
             fing_boxes[i].sy = fing_boxes[i].tly + sround(dyt);
          }
          else {
-            fing_boxes[i].sx = fing_boxes[i].trx - sround(dxt);
-            fing_boxes[i].sy = fing_boxes[i].try + sround(dyt);
+            fing_boxes[i].sx = fing_boxes[i].tRightX - sround(dxt);
+            fing_boxes[i].sy = fing_boxes[i].tRightY + sround(dyt);
          }
       }
       fing_boxes[i].sw = nsw + 4;
@@ -1367,8 +1367,8 @@ void adjust_fing_seg_pars(seg_rec_coords *fing_boxes, const int nf)
       if(fing_boxes[i].theta == 0.0) {
          fing_boxes[i].tlx = fing_boxes[i].sx - hsw;
          fing_boxes[i].tly = fing_boxes[i].sy - hsh;
-         fing_boxes[i].trx = fing_boxes[i].sx + hsw;
-         fing_boxes[i].try = fing_boxes[i].sy - hsh;
+         fing_boxes[i].tRightX = fing_boxes[i].sx + hsw;
+         fing_boxes[i].tRightY = fing_boxes[i].sy - hsh;
          fing_boxes[i].blx = fing_boxes[i].sx - hsw;
          fing_boxes[i].bly = fing_boxes[i].sy + hsh;
          fing_boxes[i].brx = fing_boxes[i].sx + hsw;
@@ -1387,8 +1387,8 @@ void adjust_fing_seg_pars(seg_rec_coords *fing_boxes, const int nf)
             fing_boxes[i].bry = fing_boxes[i].sy + sround(dy);
             dx = fing_boxes[i].sw * cos(fing_boxes[i].theta);
             dy = fing_boxes[i].sw * sin(fing_boxes[i].theta);
-            fing_boxes[i].trx = fing_boxes[i].tlx + sround(dx);
-            fing_boxes[i].try = fing_boxes[i].tly - sround(dy);
+            fing_boxes[i].tRightX = fing_boxes[i].tlx + sround(dx);
+            fing_boxes[i].tRightY = fing_boxes[i].tly - sround(dy);
             fing_boxes[i].blx = fing_boxes[i].brx - sround(dx);
             fing_boxes[i].bly = fing_boxes[i].bry + sround(dy);
          }
@@ -1396,14 +1396,14 @@ void adjust_fing_seg_pars(seg_rec_coords *fing_boxes, const int nf)
             dtheta = theta2 + fing_boxes[i].theta;
             dx = d * cos(dtheta);
             dy = d * sin(dtheta);
-            fing_boxes[i].trx = fing_boxes[i].sx + sround(dx);
-            fing_boxes[i].try = fing_boxes[i].sy - sround(dy);
+            fing_boxes[i].tRightX = fing_boxes[i].sx + sround(dx);
+            fing_boxes[i].tRightY = fing_boxes[i].sy - sround(dy);
             fing_boxes[i].blx = fing_boxes[i].sx - sround(dx);
             fing_boxes[i].bly = fing_boxes[i].sy + sround(dy);
             dx = fing_boxes[i].sw * cos(fing_boxes[i].theta);
             dy = fing_boxes[i].sw * sin(fing_boxes[i].theta);
-            fing_boxes[i].tlx = fing_boxes[i].trx - sround(dx);
-            fing_boxes[i].tly = fing_boxes[i].try + sround(dy);
+            fing_boxes[i].tlx = fing_boxes[i].tRightX - sround(dx);
+            fing_boxes[i].tly = fing_boxes[i].tRightY + sround(dy);
             fing_boxes[i].brx = fing_boxes[i].blx + sround(dx);
             fing_boxes[i].bry = fing_boxes[i].bly - sround(dy);
          }
@@ -1459,8 +1459,8 @@ void scale_seg_fingers(seg_rec_coords *fing_boxes, const int n,
 
       fing_boxes[i].tlx *= zm;
       fing_boxes[i].tly *= zm;
-      fing_boxes[i].trx *= zm;
-      fing_boxes[i].try *= zm;
+      fing_boxes[i].tRightX *= zm;
+      fing_boxes[i].tRightY *= zm;
       fing_boxes[i].blx *= zm;
       fing_boxes[i].bly *= zm;
       fing_boxes[i].brx *= zm;
@@ -1482,10 +1482,10 @@ void scale_seg_fingers(seg_rec_coords *fing_boxes, const int n,
 
       if(fing_boxes[i].theta >= 0.0) {
          fing_boxes[i].nrsw = fing_boxes[i].brx - fing_boxes[i].tlx;
-         fing_boxes[i].nrsh = fing_boxes[i].bly - fing_boxes[i].try;
+         fing_boxes[i].nrsh = fing_boxes[i].bly - fing_boxes[i].tRightY;
       }
       else {
-         fing_boxes[i].nrsw = fing_boxes[i].trx - fing_boxes[i].blx;
+         fing_boxes[i].nrsw = fing_boxes[i].tRightX - fing_boxes[i].blx;
          fing_boxes[i].nrsh = fing_boxes[i].bry - fing_boxes[i].tly;
       }
    }
@@ -1544,10 +1544,11 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
             ap = 0;
             np = 0;
             if(fing_boxes[n].theta > 0.0) {
-               if((ret = bres_line_alloc(fing_boxes[n].trx-fing_boxes[n].tlx,
-                               fing_boxes[n].try-fing_boxes[n].try,
+               if((ret = bres_line_alloc(
+                               fing_boxes[n].tRightX-fing_boxes[n].tlx,
+                               fing_boxes[n].tRightY-fing_boxes[n].tRightY,
                                fing_boxes[n].tlx-fing_boxes[n].tlx,
-                               fing_boxes[n].tly-fing_boxes[n].try,
+                               fing_boxes[n].tly-fing_boxes[n].tRightY,
                                &xp, &yp, &np, &ap))) {
                   for(e = 0; e < n; e++)
                      free(pptr[e]);
@@ -1560,9 +1561,9 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                              yp[j] >= 0 && yp[j] < fing_boxes[n].nrsh)
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
                if((ret = bres_line_alloc(fing_boxes[n].tlx-fing_boxes[n].tlx,
-                               fing_boxes[n].tly-fing_boxes[n].try,
+                               fing_boxes[n].tly-fing_boxes[n].tRightY,
                                fing_boxes[n].blx-fing_boxes[n].tlx,
-                               fing_boxes[n].bly-fing_boxes[n].try-1,
+                               fing_boxes[n].bly-fing_boxes[n].tRightY-1,
                                &xp, &yp, &np, &ap))) {
                   for(e = 0; e < n; e++)
                      free(pptr[e]);
@@ -1574,10 +1575,11 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                      if(i >= 0 && i < fing_boxes[n].nrsw &&
                              yp[j] >= 0 && yp[j] < fing_boxes[n].nrsh)
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
-               if((ret = bres_line_alloc(fing_boxes[n].trx-fing_boxes[n].tlx,
-                               fing_boxes[n].try-fing_boxes[n].try,
+               if((ret = bres_line_alloc(
+                               fing_boxes[n].tRightX-fing_boxes[n].tlx,
+                               fing_boxes[n].tRightY-fing_boxes[n].tRightY,
                                fing_boxes[n].brx-fing_boxes[n].tlx,
-                               fing_boxes[n].bry-fing_boxes[n].try,
+                               fing_boxes[n].bry-fing_boxes[n].tRightY,
                                &xp, &yp, &np, &ap))) {
                   for(e = 0; e < n; e++)
                      free(pptr[e]);
@@ -1590,9 +1592,9 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                              yp[j] >= 0 && yp[j] < fing_boxes[n].nrsh)
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
                if((ret = bres_line_alloc(fing_boxes[n].brx-fing_boxes[n].tlx,
-                               fing_boxes[n].bry-fing_boxes[n].try,
+                               fing_boxes[n].bry-fing_boxes[n].tRightY,
                                fing_boxes[n].blx-fing_boxes[n].tlx,
-                               fing_boxes[n].bly-fing_boxes[n].try-1,
+                               fing_boxes[n].bly-fing_boxes[n].tRightY-1,
                                &xp, &yp, &np, &ap))) {
                   for(e = 0; e < n; e++)
                      free(pptr[e]);
@@ -1640,8 +1642,8 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
                if((ret = bres_line_alloc(fing_boxes[n].tlx-fing_boxes[n].blx,
                                fing_boxes[n].tly-fing_boxes[n].tly,
-                               fing_boxes[n].trx-fing_boxes[n].blx,
-                               fing_boxes[n].try-fing_boxes[n].tly,
+                               fing_boxes[n].tRightX-fing_boxes[n].blx,
+                               fing_boxes[n].tRightY-fing_boxes[n].tly,
                                &xp, &yp, &np, &ap))) {
                   for(e = 0; e < n; e++)
                      free(pptr[e]);
@@ -1649,12 +1651,13 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                   return(ret);
                }
                for(j = 0; j < np; j++)
-                  for(i = xp[j]; i < fing_boxes[n].trx-fing_boxes[n].blx; i++)
+                  for(i = xp[j]; i < fing_boxes[n].tRightX-fing_boxes[n].blx; i++)
                      if(i >= 0 && i < fing_boxes[n].nrsw &&
                              yp[j] >= 0 && yp[j] < fing_boxes[n].nrsh)
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
-               if((ret = bres_line_alloc(fing_boxes[n].trx-fing_boxes[n].blx,
-                               fing_boxes[n].try-fing_boxes[n].tly,
+               if((ret = bres_line_alloc(
+                               fing_boxes[n].tRightX-fing_boxes[n].blx,
+                               fing_boxes[n].tRightY-fing_boxes[n].tly,
                                fing_boxes[n].brx-fing_boxes[n].blx,
                                fing_boxes[n].bry-fing_boxes[n].tly-1,
                                &xp, &yp, &np, &ap))) {
@@ -1664,7 +1667,7 @@ int parse_segfing(unsigned char ***pdata, unsigned char *data, const int w,
                   return(ret);
                }
                for(j = 0; j < np; j++)
-                  for(i = xp[j]; i < fing_boxes[n].trx-fing_boxes[n].blx; i++)
+                  for(i = xp[j]; i < fing_boxes[n].tRightX-fing_boxes[n].blx; i++)
                      if(i >= 0 && i < fing_boxes[n].nrsw &&
                              yp[j] >= 0 && yp[j] < fing_boxes[n].nrsh)
                         sdata[i+(yp[j]*fing_boxes[n].nrsw)] = 255;
@@ -1997,10 +2000,10 @@ int insert_parsefing(ANSI_NIST *const ansi_nist, const int imgrecord_i,
 			     fing_boxes[fing_i].tly, "TLY", ansi_nist) < 0)
 	    return -8;
 	 if (insert_int_item(imgrecord_i, field_i, subfield_i, item_i++,
-			     fing_boxes[fing_i].trx, "TRX", ansi_nist) < 0)
+			     fing_boxes[fing_i].tRightX, "TRX", ansi_nist) < 0)
 	    return -9;
 	 if (insert_int_item(imgrecord_i, field_i, subfield_i, item_i++,
-			     fing_boxes[fing_i].try, "TRY", ansi_nist) < 0)
+			     fing_boxes[fing_i].tRightY, "TRY", ansi_nist) < 0)
 	    return -10;
 	 if (insert_int_item(imgrecord_i, field_i, subfield_i, item_i++,
 			     fing_boxes[fing_i].brx, "BRX", ansi_nist) < 0)
@@ -2020,7 +2023,7 @@ int insert_parsefing(ANSI_NIST *const ansi_nist, const int imgrecord_i,
 			     fing_boxes[fing_i].tlx, "Left", ansi_nist) < 0)
 	    return -15;
 	 if (insert_int_item(imgrecord_i, field_i, subfield_i, item_i++,
-			     fing_boxes[fing_i].trx, "Right", ansi_nist) < 0)
+			     fing_boxes[fing_i].tRightX, "Right", ansi_nist) < 0)
 	    return -16;
 	 if (insert_int_item(imgrecord_i, field_i, subfield_i, item_i++,
 			     fing_boxes[fing_i].tly, "Top", ansi_nist) < 0)

@@ -51,7 +51,8 @@ of the software.
                       Michael D. Garris
       UPDATED:        09/10/2004
       UPDATED:        03/21/2005 by MDG
-      UPDATE:  12/02/2008 by Kenneth Ko - Fix to support 64-bit
+      UPDATED:        12/02/2008 by Kenneth Ko - Fix to support 64-bit
+      UPDATED:        07/10/2014 by Kenneth Ko 
 
       Contains routines responsible for reading and writing feature
       vector and target vector patterns files used by the NIST
@@ -482,8 +483,6 @@ int read_text_nnpats(char *ifile, float **ofeats, float **otargs,
    float *featsptr, /* temporary pointer to feature vectors */
          *targsptr; /* temporary pointer to target vectors */
 
-
-
    if ((fpPats = fopen(ifile, "rb")) == (FILE *)NULL){
       fprintf(stderr, "ERROR : read_text_nnpats : fopen : %s\n", ifile);
       return(-2);
@@ -520,8 +519,14 @@ int read_text_nnpats(char *ifile, float **ofeats, float **otargs,
          fprintf(stderr, "ERROR : read_text_nnpats : fscanf : localclass\n");
          return(-7);
       }
-
-      if((class_set[i] = strdup(localclass)) == (char *)NULL){
+      
+      size_t len = strlen(localclass) + 1;
+      char *value = malloc(len);
+      if (value != (char *)NULL){       
+         strncpy(value, localclass, len);
+         class_set[i] = value;
+      }
+      else{
          for(k = 0; k < i; k++)
              free(class_set[k]);
          free(class_set);

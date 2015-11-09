@@ -48,10 +48,11 @@
 # Host System:          GNU GCC/GMAKE GENERIC (UNIX)
 # Date Created:         01/14/2008
 # Date Updated:         01/31/2008 (Kenneth Ko)
-#			04/09/2008 by Joseph C. Konczal
+#                       04/09/2008 by Joseph C. Konczal
 #                       09/03/2008 (Kenneth Ko)
 #                       09/29/2008 (Kenneth Ko)
 #                       01/06/2009 (Kenneth Ko) - add support for HPUX compile
+#                       02/25/2015 (Kenneth Ko) - Renamed OPENJPEG to OPENJP2
 #
 # ******************************************************************************
 #
@@ -97,7 +98,7 @@ SRC	:= \
 	dec_jpeg2k.c
 endif
 #
-ifeq ($(NBIS_OPENJPEG_FLAG),-D__NBIS_OPENJPEG__)
+ifeq ($(NBIS_OPENJP2_FLAG),-D__NBIS_OPENJP2__)
 SRC	:= \
 	$(SRC) \
 	dec_jpeg2k.c
