@@ -143,7 +143,7 @@ DIR_ROOT_BUILDUTIL:= $(DIR_ROOT)/buildutil
 # ------------------------------------------------------------------------------
 #
 CC		:= gcc
-CFLAGS		:= -O2 -w -ansi -DOPJ_STATIC -D_POSIX_SOURCE -DNO_FORK_AND_EXECL  $(ENDIAN_FLAG) $(NBIS_JASPER_FLAG) $(NBIS_OPENJP2_FLAG) $(MSYS_FLAG) $(NBIS_PNG_FLAG) $(ARCH_FLAG)
+CFLAGS		:= -O2 -w -ansi -DOPJ_STATIC -D_POSIX_SOURCE -DNO_FORK_AND_EXECL -fcommon $(ENDIAN_FLAG) $(NBIS_JASPER_FLAG) $(NBIS_OPENJP2_FLAG) $(MSYS_FLAG) $(NBIS_PNG_FLAG) $(ARCH_FLAG)
 CDEFS		:=
 CCC		:= $(CC) $(CFLAGS) $(CDEFS)
 LDFLAGS		:= $(ARCH_FLAG)
