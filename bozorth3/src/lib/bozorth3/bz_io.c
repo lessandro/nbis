@@ -462,6 +462,8 @@ struct xyt_struct * bz_load( const char * xyt_file )
    if ( verbose_load )
       fprintf( errorfp, "Loaded %s\n", xyt_file );
 
+   free(xytq_s);
+
    return xyt_s;
 } 
 
