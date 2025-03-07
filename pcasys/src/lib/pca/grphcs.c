@@ -116,15 +116,26 @@ of the software.
 
 ***********************************************************************/
 
-#include <usebsd.h>
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
+/* Standard system headers first */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 #include <math.h>
+
+/* Other system and library headers */
+#include <usebsd.h>
 #include <event.h>
 #include <ihead.h>
 #include <img_io.h>
 #include <pca.h>
 #include <little.h>
+
+/* X11 headers last to avoid conflicts */
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
+/* Project headers */
 #include <grphcs.h>  
 #include <gr_cm.h>  
 

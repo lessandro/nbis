@@ -1,0 +1,2353 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      The system is: Darwin - 24.3.0 - arm64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+      Build flags: -fPIC;-O2;-w
+      Id flags:  
+      
+      The output was:
+      1
+      ld: library 'System' not found
+      cc: error: linker command failed with exit code 1 (use -v to see invocation)
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+      Build flags: -fPIC;-O2;-w
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is AppleClang, found in:
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/3.31.6/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:24 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ad0b3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ad0b3.dir/build.make CMakeFiles/cmTC_ad0b3.dir/build
+        Building C object CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Apple clang version 16.0.0 (clang-1600.0.26.6)
+        Target: arm64-apple-darwin24.3.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/16/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -O2 -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -w -fdebug-compilation-dir=/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -vectorize-loops -vectorize-slp -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.3.0
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/local/include"
+        ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/Library/Frameworks"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /Library/Developer/CommandLineTools/usr/lib/clang/16/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include
+         /Library/Developer/CommandLineTools/usr/include
+         /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)
+        End of search list.
+        Linking C executable cmTC_ad0b3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad0b3.dir/link.txt --verbose=1
+        Apple clang version 16.0.0 (clang-1600.0.26.6)
+        Target: arm64-apple-darwin24.3.0
+        Thread model: posix
+        InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -w -O2 -mllvm -enable-linkonceodr-outlining -o cmTC_ad0b3 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a
+        @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+        BUILD 23:52:02 Dec  5 2024
+        configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+        will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+        LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+        TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.9)
+        Library search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/swift
+        Framework search paths:
+        	/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -o cmTC_ad0b3
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:113 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Effective list of requested architectures (possibly empty)  : ""
+      Effective list of architectures found in the ABI info binary: "arm64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/Library/Developer/CommandLineTools/usr/lib/clang/16/include]
+          add: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include]
+          add: [/Library/Developer/CommandLineTools/usr/include]
+        end of search list found
+        collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/16/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/16/include]
+        collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include]
+        collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+        implicit include dirs: [/Library/Developer/CommandLineTools/usr/lib/clang/16/include;/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP']
+        ignore line: []
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ad0b3/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ad0b3.dir/build.make CMakeFiles/cmTC_ad0b3.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk   -v -Wl -v -MD -MT CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
+        ignore line: [Target: arm64-apple-darwin24.3.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.2 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +lse -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sha2 -target-feature +sha3 -target-feature +neon -target-feature +zcm -target-feature +zcz -target-feature +fullfp16 -target-abi darwinpcs -debugger-tuning=lldb -target-linker-version 1115.7.3 -v -fcoverage-compilation-dir=/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/16 -dependency-file CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/16/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -O2 -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -w -fdebug-compilation-dir=/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-bFZ7yP -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -fcommon -vectorize-loops -vectorize-slp -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 16.0.0 (clang-1600.0.26.6) default target arm64-apple-darwin24.3.0]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/Library/Frameworks"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/16/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+        ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks (framework directory)]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_ad0b3]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad0b3.dir/link.txt --verbose=1]
+        ignore line: [Apple clang version 16.0.0 (clang-1600.0.26.6)]
+        ignore line: [Target: arm64-apple-darwin24.3.0]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -w -O2 -mllvm -enable-linkonceodr-outlining -o cmTC_ad0b3 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+          arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+          arg [-demangle] ==> ignore
+          arg [-lto_library] ==> ignore, skip following value
+          arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+          arg [-dynamic] ==> ignore
+          arg [-arch] ==> ignore
+          arg [arm64] ==> ignore
+          arg [-platform_version] ==> ignore
+          arg [macos] ==> ignore
+          arg [15.0.0] ==> ignore
+          arg [15.2] ==> ignore
+          arg [-syslibroot] ==> ignore
+          arg [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk] ==> ignore
+          arg [-w] ==> ignore
+          arg [-O2] ==> ignore
+          arg [-mllvm] ==> ignore
+          arg [-enable-linkonceodr-outlining] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_ad0b3] ==> ignore
+          arg [-search_paths_first] ==> ignore
+          arg [-headerpad_max_install_names] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_ad0b3.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lSystem] ==> lib [System]
+          arg [/Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
+        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/swift]
+        Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+        remove lib [System]
+        remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/16/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib]
+        collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/swift]
+        collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/usr/lib/swift]
+        implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk/System/Library/Frameworks]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:24 (project)"
+    message: |
+      Running the C compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
+      @(#)PROGRAM:ld PROJECT:ld-1115.7.3
+      BUILD 23:52:02 Dec  5 2024
+      configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+      will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
+      LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
+      TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.9)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:194 (ensure_file_include)"
+    checks:
+      - "Looking for string.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ISOpK"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ISOpK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRING_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ISOpK'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8bd81/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8bd81.dir/build.make CMakeFiles/cmTC_8bd81.dir/build
+        Building C object CMakeFiles/cmTC_8bd81.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_8bd81.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_8bd81.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_8bd81.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ISOpK/CheckIncludeFile.c
+        Linking C executable cmTC_8bd81
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bd81.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8bd81.dir/CheckIncludeFile.c.o -o cmTC_8bd81
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:195 (ensure_file_include)"
+    checks:
+      - "Looking for memory.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tZkplW"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tZkplW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MEMORY_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tZkplW'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_006ca/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_006ca.dir/build.make CMakeFiles/cmTC_006ca.dir/build
+        Building C object CMakeFiles/cmTC_006ca.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_006ca.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_006ca.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_006ca.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tZkplW/CheckIncludeFile.c
+        Linking C executable cmTC_006ca
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_006ca.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_006ca.dir/CheckIncludeFile.c.o -o cmTC_006ca
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:196 (ensure_file_include)"
+    checks:
+      - "Looking for stdlib.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-kmb0fN"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-kmb0fN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-kmb0fN'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_49460/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_49460.dir/build.make CMakeFiles/cmTC_49460.dir/build
+        Building C object CMakeFiles/cmTC_49460.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_49460.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_49460.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_49460.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-kmb0fN/CheckIncludeFile.c
+        Linking C executable cmTC_49460
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49460.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_49460.dir/CheckIncludeFile.c.o -o cmTC_49460
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:197 (ensure_file_include)"
+    checks:
+      - "Looking for stdio.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZbrAlU"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZbrAlU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZbrAlU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5279f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5279f.dir/build.make CMakeFiles/cmTC_5279f.dir/build
+        Building C object CMakeFiles/cmTC_5279f.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_5279f.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_5279f.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_5279f.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZbrAlU/CheckIncludeFile.c
+        Linking C executable cmTC_5279f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5279f.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5279f.dir/CheckIncludeFile.c.o -o cmTC_5279f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:198 (ensure_file_include)"
+    checks:
+      - "Looking for math.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-S5xIss"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-S5xIss"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MATH_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-S5xIss'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_21533/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_21533.dir/build.make CMakeFiles/cmTC_21533.dir/build
+        Building C object CMakeFiles/cmTC_21533.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_21533.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_21533.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_21533.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-S5xIss/CheckIncludeFile.c
+        Linking C executable cmTC_21533
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21533.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_21533.dir/CheckIncludeFile.c.o -o cmTC_21533
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:199 (ensure_file_include)"
+    checks:
+      - "Looking for float.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zg5JGZ"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zg5JGZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_FLOAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zg5JGZ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_92ba6/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_92ba6.dir/build.make CMakeFiles/cmTC_92ba6.dir/build
+        Building C object CMakeFiles/cmTC_92ba6.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_92ba6.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_92ba6.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_92ba6.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zg5JGZ/CheckIncludeFile.c
+        Linking C executable cmTC_92ba6
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92ba6.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_92ba6.dir/CheckIncludeFile.c.o -o cmTC_92ba6
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:200 (ensure_file_include)"
+    checks:
+      - "Looking for time.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ahnj23"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ahnj23"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_TIME_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ahnj23'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d741f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d741f.dir/build.make CMakeFiles/cmTC_d741f.dir/build
+        Building C object CMakeFiles/cmTC_d741f.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_d741f.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_d741f.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_d741f.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ahnj23/CheckIncludeFile.c
+        Linking C executable cmTC_d741f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d741f.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d741f.dir/CheckIncludeFile.c.o -o cmTC_d741f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:201 (ensure_file_include)"
+    checks:
+      - "Looking for stdarg.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-RM1SN8"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-RM1SN8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STDARG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-RM1SN8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_678d2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_678d2.dir/build.make CMakeFiles/cmTC_678d2.dir/build
+        Building C object CMakeFiles/cmTC_678d2.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_678d2.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_678d2.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_678d2.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-RM1SN8/CheckIncludeFile.c
+        Linking C executable cmTC_678d2
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_678d2.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_678d2.dir/CheckIncludeFile.c.o -o cmTC_678d2
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:202 (ensure_file_include)"
+    checks:
+      - "Looking for ctype.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-qOpr1Z"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-qOpr1Z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_CTYPE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-qOpr1Z'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0a710/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0a710.dir/build.make CMakeFiles/cmTC_0a710.dir/build
+        Building C object CMakeFiles/cmTC_0a710.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_0a710.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_0a710.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_0a710.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-qOpr1Z/CheckIncludeFile.c
+        Linking C executable cmTC_0a710
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a710.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0a710.dir/CheckIncludeFile.c.o -o cmTC_0a710
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:203 (ensure_file_include)"
+    checks:
+      - "Looking for assert.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-dl826B"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-dl826B"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_ASSERT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-dl826B'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cab34/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cab34.dir/build.make CMakeFiles/cmTC_cab34.dir/build
+        Building C object CMakeFiles/cmTC_cab34.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_cab34.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_cab34.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_cab34.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-dl826B/CheckIncludeFile.c
+        Linking C executable cmTC_cab34
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cab34.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cab34.dir/CheckIncludeFile.c.o -o cmTC_cab34
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:206 (ensure_file_include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-zAyw1d"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-zAyw1d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "OPJ_HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-zAyw1d'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_31bf3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_31bf3.dir/build.make CMakeFiles/cmTC_31bf3.dir/build
+        Building C object CMakeFiles/cmTC_31bf3.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_31bf3.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_31bf3.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_31bf3.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-zAyw1d/CheckIncludeFile.c
+        Linking C executable cmTC_31bf3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31bf3.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_31bf3.dir/CheckIncludeFile.c.o -o cmTC_31bf3
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "cmake/EnsureFileInclude.cmake:13 (CHECK_INCLUDE_FILE)"
+      - "CMakeLists.txt:207 (ensure_file_include)"
+    checks:
+      - "Looking for inttypes.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-l8S1C0"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-l8S1C0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "OPJ_HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-l8S1C0'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d2bdf/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d2bdf.dir/build.make CMakeFiles/cmTC_d2bdf.dir/build
+        Building C object CMakeFiles/cmTC_d2bdf.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_d2bdf.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_d2bdf.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_d2bdf.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-l8S1C0/CheckIncludeFile.c
+        Linking C executable cmTC_d2bdf
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2bdf.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d2bdf.dir/CheckIncludeFile.c.o -o cmTC_d2bdf
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:211 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for strings.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Fd53N3"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Fd53N3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Fd53N3'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_28b24/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_28b24.dir/build.make CMakeFiles/cmTC_28b24.dir/build
+        Building C object CMakeFiles/cmTC_28b24.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_28b24.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_28b24.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_28b24.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Fd53N3/CheckIncludeFile.c
+        Linking C executable cmTC_28b24
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28b24.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_28b24.dir/CheckIncludeFile.c.o -o cmTC_28b24
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:212 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for sys/stat.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-uyLrju"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-uyLrju"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SYS_STAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-uyLrju'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8f034/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8f034.dir/build.make CMakeFiles/cmTC_8f034.dir/build
+        Building C object CMakeFiles/cmTC_8f034.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_8f034.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_8f034.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_8f034.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-uyLrju/CheckIncludeFile.c
+        Linking C executable cmTC_8f034
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f034.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8f034.dir/CheckIncludeFile.c.o -o cmTC_8f034
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:213 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-1Qz1eR"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-1Qz1eR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-1Qz1eR'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_91388/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_91388.dir/build.make CMakeFiles/cmTC_91388.dir/build
+        Building C object CMakeFiles/cmTC_91388.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_91388.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_91388.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_91388.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-1Qz1eR/CheckIncludeFile.c
+        Linking C executable cmTC_91388
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91388.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_91388.dir/CheckIncludeFile.c.o -o cmTC_91388
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:214 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZXUbTB"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZXUbTB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZXUbTB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2a7fe/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2a7fe.dir/build.make CMakeFiles/cmTC_2a7fe.dir/build
+        Building C object CMakeFiles/cmTC_2a7fe.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_2a7fe.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_2a7fe.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_2a7fe.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-ZXUbTB/CheckIncludeFile.c
+        Linking C executable cmTC_2a7fe
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a7fe.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2a7fe.dir/CheckIncludeFile.c.o -o cmTC_2a7fe
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/TestLargeFiles.cmake:29 (try_compile)"
+      - "CMakeLists.txt:218 (OPJ_TEST_LARGE_FILES)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "FILE64_OK"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d4c8d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d4c8d.dir/build.make CMakeFiles/cmTC_d4c8d.dir/build
+        Building C object CMakeFiles/cmTC_d4c8d.dir/TestFileOffsetBits.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_d4c8d.dir/TestFileOffsetBits.c.o -MF CMakeFiles/cmTC_d4c8d.dir/TestFileOffsetBits.c.o.d -o CMakeFiles/cmTC_d4c8d.dir/TestFileOffsetBits.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake/TestFileOffsetBits.c
+        Linking C executable cmTC_d4c8d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4c8d.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d4c8d.dir/TestFileOffsetBits.c.o -o cmTC_d4c8d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "cmake/TestLargeFiles.cmake:94 (try_compile)"
+      - "CMakeLists.txt:218 (OPJ_TEST_LARGE_FILES)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "FSEEKO_COMPILE_OK"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_25a9b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_25a9b.dir/build.make CMakeFiles/cmTC_25a9b.dir/build
+        Building C object CMakeFiles/cmTC_25a9b.dir/TestLargeFiles.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_25a9b.dir/TestLargeFiles.c.o -MF CMakeFiles/cmTC_25a9b.dir/TestLargeFiles.c.o.d -o CMakeFiles/cmTC_25a9b.dir/TestLargeFiles.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/TestLargeFiles.c
+        Linking C executable cmTC_25a9b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25a9b.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_25a9b.dir/TestLargeFiles.c.o -o cmTC_25a9b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "thirdparty/libz/CMakeLists.txt:14 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-shP6jV"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-shP6jV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-shP6jV'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3ef92/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3ef92.dir/build.make CMakeFiles/cmTC_3ef92.dir/build
+        Building C object CMakeFiles/cmTC_3ef92.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_3ef92.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_3ef92.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_3ef92.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-shP6jV/CheckIncludeFile.c
+        Linking C executable cmTC_3ef92
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ef92.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3ef92.dir/CheckIncludeFile.c.o -o cmTC_3ef92
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "thirdparty/libz/CMakeLists.txt:15 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tuBHxc"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tuBHxc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tuBHxc'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_83d9d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_83d9d.dir/build.make CMakeFiles/cmTC_83d9d.dir/build
+        Building C object CMakeFiles/cmTC_83d9d.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_83d9d.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_83d9d.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_83d9d.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tuBHxc/CheckIncludeFile.c
+        Linking C executable cmTC_83d9d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83d9d.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_83d9d.dir/CheckIncludeFile.c.o -o cmTC_83d9d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libz/CMakeLists.txt:33 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cd033/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cd033.dir/build.make CMakeFiles/cmTC_cd033.dir/build
+        Building C object CMakeFiles/cmTC_cd033.dir/OFF64_T.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_TYPES_H -D_LARGEFILE64_SOURCE=1  -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_cd033.dir/OFF64_T.c.o -MF CMakeFiles/cmTC_cd033.dir/OFF64_T.c.o.d -o CMakeFiles/cmTC_cd033.dir/OFF64_T.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:29:12: error: use of undeclared identifier 'off64_t'
+           29 |   ('0' + ((SIZE / 10000)%10)),
+              |            ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:27:22: note: expanded from macro 'SIZE'
+           27 | #define SIZE (sizeof(off64_t))
+              |                      ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:30:12: error: use of undeclared identifier 'off64_t'
+           30 |   ('0' + ((SIZE / 1000)%10)),
+              |            ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:27:22: note: expanded from macro 'SIZE'
+           27 | #define SIZE (sizeof(off64_t))
+              |                      ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:31:12: error: use of undeclared identifier 'off64_t'
+           31 |   ('0' + ((SIZE / 100)%10)),
+              |            ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:27:22: note: expanded from macro 'SIZE'
+           27 | #define SIZE (sizeof(off64_t))
+              |                      ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:32:12: error: use of undeclared identifier 'off64_t'
+           32 |   ('0' + ((SIZE / 10)%10)),
+              |            ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:27:22: note: expanded from macro 'SIZE'
+           27 | #define SIZE (sizeof(off64_t))
+              |                      ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:33:12: error: use of undeclared identifier 'off64_t'
+           33 |   ('0' +  (SIZE    % 10)),
+              |            ^
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-TgZ2c8/OFF64_T.c:27:22: note: expanded from macro 'SIZE'
+           27 | #define SIZE (sizeof(off64_t))
+              |                      ^
+        5 errors generated.
+        make[4]: *** [CMakeFiles/cmTC_cd033.dir/OFF64_T.c.o] Error 1
+        make[3]: *** [cmTC_cd033/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libz/CMakeLists.txt:41 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-blaXwT"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-blaXwT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-blaXwT'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_08cb4/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_08cb4.dir/build.make CMakeFiles/cmTC_08cb4.dir/build
+        Building C object CMakeFiles/cmTC_08cb4.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=fseeko -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_08cb4.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_08cb4.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_08cb4.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-blaXwT/CheckFunctionExists.c
+        Linking C executable cmTC_08cb4
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08cb4.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=fseeko -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_08cb4.dir/CheckFunctionExists.c.o -o cmTC_08cb4
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "thirdparty/libz/CMakeLists.txt:48 (CHECK_INCLUDE_FILE)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9GpqZz"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9GpqZz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9GpqZz'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ed901/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ed901.dir/build.make CMakeFiles/cmTC_ed901.dir/build
+        Building C object CMakeFiles/cmTC_ed901.dir/CheckIncludeFile.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_ed901.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_ed901.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_ed901.dir/CheckIncludeFile.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9GpqZz/CheckIncludeFile.c
+        Linking C executable cmTC_ed901
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed901.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ed901.dir/CheckIncludeFile.c.o -o cmTC_ed901
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:74 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file zlib.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eT1a3y"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eT1a3y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_ZLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eT1a3y'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4183e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4183e.dir/build.make CMakeFiles/cmTC_4183e.dir/build
+        Building C object CMakeFiles/cmTC_4183e.dir/HAVE_ZLIB_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_4183e.dir/HAVE_ZLIB_H.c.o -MF CMakeFiles/cmTC_4183e.dir/HAVE_ZLIB_H.c.o.d -o CMakeFiles/cmTC_4183e.dir/HAVE_ZLIB_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eT1a3y/HAVE_ZLIB_H.c
+        Linking C executable cmTC_4183e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4183e.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4183e.dir/HAVE_ZLIB_H.c.o -o cmTC_4183e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:75 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file jpeglib.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zm3EmQ"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zm3EmQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_JPEGLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zm3EmQ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_58824/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_58824.dir/build.make CMakeFiles/cmTC_58824.dir/build
+        Building C object CMakeFiles/cmTC_58824.dir/HAVE_JPEGLIB_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_58824.dir/HAVE_JPEGLIB_H.c.o -MF CMakeFiles/cmTC_58824.dir/HAVE_JPEGLIB_H.c.o.d -o CMakeFiles/cmTC_58824.dir/HAVE_JPEGLIB_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zm3EmQ/HAVE_JPEGLIB_H.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Zm3EmQ/HAVE_JPEGLIB_H.c:2:10: fatal error: 'jpeglib.h' file not found
+            2 | #include <jpeglib.h>
+              |          ^~~~~~~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_58824.dir/HAVE_JPEGLIB_H.c.o] Error 1
+        make[3]: *** [cmTC_58824/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:87 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file dlfcn.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-GyWVYP"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-GyWVYP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-GyWVYP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0fafd/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0fafd.dir/build.make CMakeFiles/cmTC_0fafd.dir/build
+        Building C object CMakeFiles/cmTC_0fafd.dir/HAVE_DLFCN_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_0fafd.dir/HAVE_DLFCN_H.c.o -MF CMakeFiles/cmTC_0fafd.dir/HAVE_DLFCN_H.c.o.d -o CMakeFiles/cmTC_0fafd.dir/HAVE_DLFCN_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-GyWVYP/HAVE_DLFCN_H.c
+        Linking C executable cmTC_0fafd
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0fafd.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0fafd.dir/HAVE_DLFCN_H.c.o -o cmTC_0fafd
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:88 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file fcntl.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-McZzpy"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-McZzpy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_FCNTL_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-McZzpy'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_49314/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_49314.dir/build.make CMakeFiles/cmTC_49314.dir/build
+        Building C object CMakeFiles/cmTC_49314.dir/HAVE_FCNTL_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_49314.dir/HAVE_FCNTL_H.c.o -MF CMakeFiles/cmTC_49314.dir/HAVE_FCNTL_H.c.o.d -o CMakeFiles/cmTC_49314.dir/HAVE_FCNTL_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-McZzpy/HAVE_FCNTL_H.c
+        Linking C executable cmTC_49314
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49314.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_49314.dir/HAVE_FCNTL_H.c.o -o cmTC_49314
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:89 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file inttypes.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Q4LE1d"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Q4LE1d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Q4LE1d'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a19b5/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a19b5.dir/build.make CMakeFiles/cmTC_a19b5.dir/build
+        Building C object CMakeFiles/cmTC_a19b5.dir/HAVE_INTTYPES_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_a19b5.dir/HAVE_INTTYPES_H.c.o -MF CMakeFiles/cmTC_a19b5.dir/HAVE_INTTYPES_H.c.o.d -o CMakeFiles/cmTC_a19b5.dir/HAVE_INTTYPES_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Q4LE1d/HAVE_INTTYPES_H.c
+        Linking C executable cmTC_a19b5
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a19b5.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a19b5.dir/HAVE_INTTYPES_H.c.o -o cmTC_a19b5
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:90 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file io.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mJ6t27"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mJ6t27"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_IO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mJ6t27'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1a9dc/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1a9dc.dir/build.make CMakeFiles/cmTC_1a9dc.dir/build
+        Building C object CMakeFiles/cmTC_1a9dc.dir/HAVE_IO_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_1a9dc.dir/HAVE_IO_H.c.o -MF CMakeFiles/cmTC_1a9dc.dir/HAVE_IO_H.c.o.d -o CMakeFiles/cmTC_1a9dc.dir/HAVE_IO_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mJ6t27/HAVE_IO_H.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mJ6t27/HAVE_IO_H.c:2:10: fatal error: 'io.h' file not found
+            2 | #include <io.h>
+              |          ^~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_1a9dc.dir/HAVE_IO_H.c.o] Error 1
+        make[3]: *** [cmTC_1a9dc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:91 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file limits.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-sm3n13"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-sm3n13"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_LIMITS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-sm3n13'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_63423/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_63423.dir/build.make CMakeFiles/cmTC_63423.dir/build
+        Building C object CMakeFiles/cmTC_63423.dir/HAVE_LIMITS_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_63423.dir/HAVE_LIMITS_H.c.o -MF CMakeFiles/cmTC_63423.dir/HAVE_LIMITS_H.c.o.d -o CMakeFiles/cmTC_63423.dir/HAVE_LIMITS_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-sm3n13/HAVE_LIMITS_H.c
+        Linking C executable cmTC_63423
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63423.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_63423.dir/HAVE_LIMITS_H.c.o -o cmTC_63423
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:92 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file malloc.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8lkBYL"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8lkBYL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MALLOC_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8lkBYL'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_af28d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_af28d.dir/build.make CMakeFiles/cmTC_af28d.dir/build
+        Building C object CMakeFiles/cmTC_af28d.dir/HAVE_MALLOC_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_af28d.dir/HAVE_MALLOC_H.c.o -MF CMakeFiles/cmTC_af28d.dir/HAVE_MALLOC_H.c.o.d -o CMakeFiles/cmTC_af28d.dir/HAVE_MALLOC_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8lkBYL/HAVE_MALLOC_H.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8lkBYL/HAVE_MALLOC_H.c:2:10: fatal error: 'malloc.h' file not found
+            2 | #include <malloc.h>
+              |          ^~~~~~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_af28d.dir/HAVE_MALLOC_H.c.o] Error 1
+        make[3]: *** [cmTC_af28d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:94 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file search.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SXW2sO"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SXW2sO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SEARCH_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SXW2sO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cf4b1/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cf4b1.dir/build.make CMakeFiles/cmTC_cf4b1.dir/build
+        Building C object CMakeFiles/cmTC_cf4b1.dir/HAVE_SEARCH_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_cf4b1.dir/HAVE_SEARCH_H.c.o -MF CMakeFiles/cmTC_cf4b1.dir/HAVE_SEARCH_H.c.o.d -o CMakeFiles/cmTC_cf4b1.dir/HAVE_SEARCH_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SXW2sO/HAVE_SEARCH_H.c
+        Linking C executable cmTC_cf4b1
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf4b1.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cf4b1.dir/HAVE_SEARCH_H.c.o -o cmTC_cf4b1
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:100 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file sys/time.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6IQEV8"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6IQEV8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SYS_TIME_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6IQEV8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f312c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f312c.dir/build.make CMakeFiles/cmTC_f312c.dir/build
+        Building C object CMakeFiles/cmTC_f312c.dir/HAVE_SYS_TIME_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_f312c.dir/HAVE_SYS_TIME_H.c.o -MF CMakeFiles/cmTC_f312c.dir/HAVE_SYS_TIME_H.c.o.d -o CMakeFiles/cmTC_f312c.dir/HAVE_SYS_TIME_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6IQEV8/HAVE_SYS_TIME_H.c
+        Linking C executable cmTC_f312c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f312c.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f312c.dir/HAVE_SYS_TIME_H.c.o -o cmTC_f312c
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:104 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file windows.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-fCRCje"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-fCRCje"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_WINDOWS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-fCRCje'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7211b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7211b.dir/build.make CMakeFiles/cmTC_7211b.dir/build
+        Building C object CMakeFiles/cmTC_7211b.dir/HAVE_WINDOWS_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_7211b.dir/HAVE_WINDOWS_H.c.o -MF CMakeFiles/cmTC_7211b.dir/HAVE_WINDOWS_H.c.o.d -o CMakeFiles/cmTC_7211b.dir/HAVE_WINDOWS_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-fCRCje/HAVE_WINDOWS_H.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-fCRCje/HAVE_WINDOWS_H.c:2:10: fatal error: 'windows.h' file not found
+            2 | #include <windows.h>
+              |          ^~~~~~~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_7211b.dir/HAVE_WINDOWS_H.c.o] Error 1
+        make[3]: *** [cmTC_7211b/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:106 (CHECK_INCLUDE_FILES)"
+    checks:
+      - "Looking for include file ieeefp.h"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mI0pAD"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mI0pAD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_IEEEFP_H"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mI0pAD'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f483a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f483a.dir/build.make CMakeFiles/cmTC_f483a.dir/build
+        Building C object CMakeFiles/cmTC_f483a.dir/HAVE_IEEEFP_H.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_f483a.dir/HAVE_IEEEFP_H.c.o -MF CMakeFiles/cmTC_f483a.dir/HAVE_IEEEFP_H.c.o.d -o CMakeFiles/cmTC_f483a.dir/HAVE_IEEEFP_H.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mI0pAD/HAVE_IEEEFP_H.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-mI0pAD/HAVE_IEEEFP_H.c:2:10: fatal error: 'ieeefp.h' file not found
+            2 | #include <ieeefp.h>
+              |          ^~~~~~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_f483a.dir/HAVE_IEEEFP_H.c.o] Error 1
+        make[3]: *** [cmTC_f483a/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:125 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for getopt"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rOj9k8"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rOj9k8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_GETOPT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rOj9k8'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e1f33/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e1f33.dir/build.make CMakeFiles/cmTC_e1f33.dir/build
+        Building C object CMakeFiles/cmTC_e1f33.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=getopt -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_e1f33.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_e1f33.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_e1f33.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rOj9k8/CheckFunctionExists.c
+        Linking C executable cmTC_e1f33
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1f33.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=getopt -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e1f33.dir/CheckFunctionExists.c.o -o cmTC_e1f33
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:126 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for isascii"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-7zOEmZ"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-7zOEmZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_ISASCII"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-7zOEmZ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c84b6/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c84b6.dir/build.make CMakeFiles/cmTC_c84b6.dir/build
+        Building C object CMakeFiles/cmTC_c84b6.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=isascii -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_c84b6.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_c84b6.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_c84b6.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-7zOEmZ/CheckFunctionExists.c
+        Linking C executable cmTC_c84b6
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c84b6.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=isascii -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c84b6.dir/CheckFunctionExists.c.o -o cmTC_c84b6
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:127 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for memmove"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6rLvkX"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6rLvkX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MEMMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6rLvkX'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6fe66/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6fe66.dir/build.make CMakeFiles/cmTC_6fe66.dir/build
+        Building C object CMakeFiles/cmTC_6fe66.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=memmove -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_6fe66.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_6fe66.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_6fe66.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-6rLvkX/CheckFunctionExists.c
+        Linking C executable cmTC_6fe66
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fe66.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=memmove -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6fe66.dir/CheckFunctionExists.c.o -o cmTC_6fe66
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:128 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for memset"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tEUkVj"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tEUkVj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MEMSET"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tEUkVj'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c4cb3/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c4cb3.dir/build.make CMakeFiles/cmTC_c4cb3.dir/build
+        Building C object CMakeFiles/cmTC_c4cb3.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=memset -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_c4cb3.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_c4cb3.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_c4cb3.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tEUkVj/CheckFunctionExists.c
+        Linking C executable cmTC_c4cb3
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4cb3.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=memset -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c4cb3.dir/CheckFunctionExists.c.o -o cmTC_c4cb3
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:129 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for mmap"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8cZ8UZ"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8cZ8UZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_MMAP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8cZ8UZ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2acca/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2acca.dir/build.make CMakeFiles/cmTC_2acca.dir/build
+        Building C object CMakeFiles/cmTC_2acca.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=mmap -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_2acca.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_2acca.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_2acca.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8cZ8UZ/CheckFunctionExists.c
+        Linking C executable cmTC_2acca
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2acca.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=mmap -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2acca.dir/CheckFunctionExists.c.o -o cmTC_2acca
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:130 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strcasecmp"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-3c4DsL"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-3c4DsL"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-3c4DsL'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_61dd8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_61dd8.dir/build.make CMakeFiles/cmTC_61dd8.dir/build
+        Building C object CMakeFiles/cmTC_61dd8.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strcasecmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_61dd8.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_61dd8.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_61dd8.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-3c4DsL/CheckFunctionExists.c
+        Linking C executable cmTC_61dd8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61dd8.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strcasecmp -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_61dd8.dir/CheckFunctionExists.c.o -o cmTC_61dd8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:131 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strchr"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-K6vRTt"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-K6vRTt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRCHR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-K6vRTt'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6170b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6170b.dir/build.make CMakeFiles/cmTC_6170b.dir/build
+        Building C object CMakeFiles/cmTC_6170b.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strchr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_6170b.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_6170b.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_6170b.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-K6vRTt/CheckFunctionExists.c
+        Linking C executable cmTC_6170b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6170b.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strchr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6170b.dir/CheckFunctionExists.c.o -o cmTC_6170b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:132 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strrchr"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-UeRMjW"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-UeRMjW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRRCHR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-UeRMjW'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3300a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3300a.dir/build.make CMakeFiles/cmTC_3300a.dir/build
+        Building C object CMakeFiles/cmTC_3300a.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strrchr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_3300a.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_3300a.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_3300a.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-UeRMjW/CheckFunctionExists.c
+        Linking C executable cmTC_3300a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3300a.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strrchr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3300a.dir/CheckFunctionExists.c.o -o cmTC_3300a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:133 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strstr"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HNR2xr"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HNR2xr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRSTR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HNR2xr'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9d600/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_9d600.dir/build.make CMakeFiles/cmTC_9d600.dir/build
+        Building C object CMakeFiles/cmTC_9d600.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strstr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_9d600.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_9d600.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_9d600.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HNR2xr/CheckFunctionExists.c
+        Linking C executable cmTC_9d600
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d600.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strstr -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_9d600.dir/CheckFunctionExists.c.o -o cmTC_9d600
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:134 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strtol"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-A4OLn7"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-A4OLn7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRTOL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-A4OLn7'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_178d7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_178d7.dir/build.make CMakeFiles/cmTC_178d7.dir/build
+        Building C object CMakeFiles/cmTC_178d7.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtol -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_178d7.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_178d7.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_178d7.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-A4OLn7/CheckFunctionExists.c
+        Linking C executable cmTC_178d7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_178d7.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtol -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_178d7.dir/CheckFunctionExists.c.o -o cmTC_178d7
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:135 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strtoul"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rp2sdN"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rp2sdN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRTOUL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rp2sdN'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0d476/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0d476.dir/build.make CMakeFiles/cmTC_0d476.dir/build
+        Building C object CMakeFiles/cmTC_0d476.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtoul -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_0d476.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_0d476.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_0d476.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rp2sdN/CheckFunctionExists.c
+        Linking C executable cmTC_0d476
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d476.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtoul -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0d476.dir/CheckFunctionExists.c.o -o cmTC_0d476
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "thirdparty/libtiff/CMakeLists.txt:136 (CHECK_FUNCTION_EXISTS)"
+    checks:
+      - "Looking for strtoull"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Wp2BGP"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Wp2BGP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_STRTOULL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Wp2BGP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3d79b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3d79b.dir/build.make CMakeFiles/cmTC_3d79b.dir/build
+        Building C object CMakeFiles/cmTC_3d79b.dir/CheckFunctionExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtoull -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_3d79b.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_3d79b.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_3d79b.dir/CheckFunctionExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-Wp2BGP/CheckFunctionExists.c
+        Linking C executable cmTC_3d79b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d79b.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w -DCHECK_FUNCTION_EXISTS=strtoull -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3d79b.dir/CheckFunctionExists.c.o -o cmTC_3d79b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:140 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of signed int"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-40Uxc1"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-40Uxc1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIGNED_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-40Uxc1'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_63fe7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_63fe7.dir/build.make CMakeFiles/cmTC_63fe7.dir/build
+        Building C object CMakeFiles/cmTC_63fe7.dir/SIZEOF_SIGNED_INT.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_63fe7.dir/SIZEOF_SIGNED_INT.c.o -MF CMakeFiles/cmTC_63fe7.dir/SIZEOF_SIGNED_INT.c.o.d -o CMakeFiles/cmTC_63fe7.dir/SIZEOF_SIGNED_INT.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-40Uxc1/SIZEOF_SIGNED_INT.c
+        Linking C executable cmTC_63fe7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63fe7.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_63fe7.dir/SIZEOF_SIGNED_INT.c.o -o cmTC_63fe7
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:141 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of signed long"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-MZH6Vd"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-MZH6Vd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIGNED_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-MZH6Vd'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f325a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f325a.dir/build.make CMakeFiles/cmTC_f325a.dir/build
+        Building C object CMakeFiles/cmTC_f325a.dir/SIZEOF_SIGNED_LONG.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_f325a.dir/SIZEOF_SIGNED_LONG.c.o -MF CMakeFiles/cmTC_f325a.dir/SIZEOF_SIGNED_LONG.c.o.d -o CMakeFiles/cmTC_f325a.dir/SIZEOF_SIGNED_LONG.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-MZH6Vd/SIZEOF_SIGNED_LONG.c
+        Linking C executable cmTC_f325a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f325a.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f325a.dir/SIZEOF_SIGNED_LONG.c.o -o cmTC_f325a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:142 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of signed long long"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8XIe86"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8XIe86"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIGNED_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8XIe86'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bfecc/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bfecc.dir/build.make CMakeFiles/cmTC_bfecc.dir/build
+        Building C object CMakeFiles/cmTC_bfecc.dir/SIZEOF_SIGNED_LONG_LONG.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_bfecc.dir/SIZEOF_SIGNED_LONG_LONG.c.o -MF CMakeFiles/cmTC_bfecc.dir/SIZEOF_SIGNED_LONG_LONG.c.o.d -o CMakeFiles/cmTC_bfecc.dir/SIZEOF_SIGNED_LONG_LONG.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-8XIe86/SIZEOF_SIGNED_LONG_LONG.c
+        Linking C executable cmTC_bfecc
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bfecc.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_bfecc.dir/SIZEOF_SIGNED_LONG_LONG.c.o -o cmTC_bfecc
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:143 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of signed short"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rsDV1L"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rsDV1L"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIGNED_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rsDV1L'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3f966/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3f966.dir/build.make CMakeFiles/cmTC_3f966.dir/build
+        Building C object CMakeFiles/cmTC_3f966.dir/SIZEOF_SIGNED_SHORT.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_3f966.dir/SIZEOF_SIGNED_SHORT.c.o -MF CMakeFiles/cmTC_3f966.dir/SIZEOF_SIGNED_SHORT.c.o.d -o CMakeFiles/cmTC_3f966.dir/SIZEOF_SIGNED_SHORT.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-rsDV1L/SIZEOF_SIGNED_SHORT.c
+        Linking C executable cmTC_3f966
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f966.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3f966.dir/SIZEOF_SIGNED_SHORT.c.o -o cmTC_3f966
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:144 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of unsigned int"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-NO39AT"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-NO39AT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-NO39AT'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3e7f4/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3e7f4.dir/build.make CMakeFiles/cmTC_3e7f4.dir/build
+        Building C object CMakeFiles/cmTC_3e7f4.dir/SIZEOF_UNSIGNED_INT.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_3e7f4.dir/SIZEOF_UNSIGNED_INT.c.o -MF CMakeFiles/cmTC_3e7f4.dir/SIZEOF_UNSIGNED_INT.c.o.d -o CMakeFiles/cmTC_3e7f4.dir/SIZEOF_UNSIGNED_INT.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-NO39AT/SIZEOF_UNSIGNED_INT.c
+        Linking C executable cmTC_3e7f4
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e7f4.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3e7f4.dir/SIZEOF_UNSIGNED_INT.c.o -o cmTC_3e7f4
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:145 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of unsigned long"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-n0S14I"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-n0S14I"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-n0S14I'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cd486/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_cd486.dir/build.make CMakeFiles/cmTC_cd486.dir/build
+        Building C object CMakeFiles/cmTC_cd486.dir/SIZEOF_UNSIGNED_LONG.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_cd486.dir/SIZEOF_UNSIGNED_LONG.c.o -MF CMakeFiles/cmTC_cd486.dir/SIZEOF_UNSIGNED_LONG.c.o.d -o CMakeFiles/cmTC_cd486.dir/SIZEOF_UNSIGNED_LONG.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-n0S14I/SIZEOF_UNSIGNED_LONG.c
+        Linking C executable cmTC_cd486
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd486.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cd486.dir/SIZEOF_UNSIGNED_LONG.c.o -o cmTC_cd486
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:146 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of unsigned long long"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ohQUj"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ohQUj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ohQUj'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1ad7d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1ad7d.dir/build.make CMakeFiles/cmTC_1ad7d.dir/build
+        Building C object CMakeFiles/cmTC_1ad7d.dir/SIZEOF_UNSIGNED_LONG_LONG.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_1ad7d.dir/SIZEOF_UNSIGNED_LONG_LONG.c.o -MF CMakeFiles/cmTC_1ad7d.dir/SIZEOF_UNSIGNED_LONG_LONG.c.o.d -o CMakeFiles/cmTC_1ad7d.dir/SIZEOF_UNSIGNED_LONG_LONG.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-9ohQUj/SIZEOF_UNSIGNED_LONG_LONG.c
+        Linking C executable cmTC_1ad7d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ad7d.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1ad7d.dir/SIZEOF_UNSIGNED_LONG_LONG.c.o -o cmTC_1ad7d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:147 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of unsigned short"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IOiuAg"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IOiuAg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IOiuAg'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4cd64/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4cd64.dir/build.make CMakeFiles/cmTC_4cd64.dir/build
+        Building C object CMakeFiles/cmTC_4cd64.dir/SIZEOF_UNSIGNED_SHORT.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_4cd64.dir/SIZEOF_UNSIGNED_SHORT.c.o -MF CMakeFiles/cmTC_4cd64.dir/SIZEOF_UNSIGNED_SHORT.c.o.d -o CMakeFiles/cmTC_4cd64.dir/SIZEOF_UNSIGNED_SHORT.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IOiuAg/SIZEOF_UNSIGNED_SHORT.c
+        Linking C executable cmTC_4cd64
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cd64.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4cd64.dir/SIZEOF_UNSIGNED_SHORT.c.o -o cmTC_4cd64
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:148 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of unsigned char*"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IWe4yA"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IWe4yA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SIZEOF_UNSIGNED_CHAR_P"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IWe4yA'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_165da/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_165da.dir/build.make CMakeFiles/cmTC_165da.dir/build
+        Building C object CMakeFiles/cmTC_165da.dir/SIZEOF_UNSIGNED_CHAR_P.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_165da.dir/SIZEOF_UNSIGNED_CHAR_P.c.o -MF CMakeFiles/cmTC_165da.dir/SIZEOF_UNSIGNED_CHAR_P.c.o.d -o CMakeFiles/cmTC_165da.dir/SIZEOF_UNSIGNED_CHAR_P.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-IWe4yA/SIZEOF_UNSIGNED_CHAR_P.c
+        Linking C executable cmTC_165da
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_165da.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_165da.dir/SIZEOF_UNSIGNED_CHAR_P.c.o -o cmTC_165da
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "thirdparty/libtiff/CMakeLists.txt:150 (CHECK_TYPE_SIZE)"
+    checks:
+      - "Check size of ssize_t"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SqCjqb"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SqCjqb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SSIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SqCjqb'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_95f43/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_95f43.dir/build.make CMakeFiles/cmTC_95f43.dir/build
+        Building C object CMakeFiles/cmTC_95f43.dir/SSIZE_T.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_95f43.dir/SSIZE_T.c.o -MF CMakeFiles/cmTC_95f43.dir/SSIZE_T.c.o.d -o CMakeFiles/cmTC_95f43.dir/SSIZE_T.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-SqCjqb/SSIZE_T.c
+        Linking C executable cmTC_95f43
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95f43.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_95f43.dir/SSIZE_T.c.o -o cmTC_95f43
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "thirdparty/libtiff/CMakeLists.txt:221 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for floor"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HYkiph"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HYkiph"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_FLOOR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HYkiph'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04c64/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_04c64.dir/build.make CMakeFiles/cmTC_04c64.dir/build
+        Building C object CMakeFiles/cmTC_04c64.dir/CheckSymbolExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_04c64.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_04c64.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_04c64.dir/CheckSymbolExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-HYkiph/CheckSymbolExists.c
+        Linking C executable cmTC_04c64
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04c64.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_04c64.dir/CheckSymbolExists.c.o -o cmTC_04c64  -lm
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "thirdparty/libtiff/CMakeLists.txt:222 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for sqrt"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-LJgqYn"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-LJgqYn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SQRT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-LJgqYn'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fd0f2/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fd0f2.dir/build.make CMakeFiles/cmTC_fd0f2.dir/build
+        Building C object CMakeFiles/cmTC_fd0f2.dir/CheckSymbolExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_fd0f2.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_fd0f2.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_fd0f2.dir/CheckSymbolExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-LJgqYn/CheckSymbolExists.c
+        Linking C executable cmTC_fd0f2
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd0f2.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fd0f2.dir/CheckSymbolExists.c.o -o cmTC_fd0f2  -lm
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "thirdparty/libtiff/CMakeLists.txt:223 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for pow"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-2JMPAW"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-2JMPAW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_POW"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-2JMPAW'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f82ec/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f82ec.dir/build.make CMakeFiles/cmTC_f82ec.dir/build
+        Building C object CMakeFiles/cmTC_f82ec.dir/CheckSymbolExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_f82ec.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_f82ec.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_f82ec.dir/CheckSymbolExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-2JMPAW/CheckSymbolExists.c
+        Linking C executable cmTC_f82ec
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f82ec.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f82ec.dir/CheckSymbolExists.c.o -o cmTC_f82ec  -lm
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "thirdparty/libtiff/CMakeLists.txt:224 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for lfind"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eLxSej"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eLxSej"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_LFIND"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eLxSej'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_356ea/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_356ea.dir/build.make CMakeFiles/cmTC_356ea.dir/build
+        Building C object CMakeFiles/cmTC_356ea.dir/CheckSymbolExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_356ea.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_356ea.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_356ea.dir/CheckSymbolExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-eLxSej/CheckSymbolExists.c
+        Linking C executable cmTC_356ea
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_356ea.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_356ea.dir/CheckSymbolExists.c.o -o cmTC_356ea  -lm
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "thirdparty/libtiff/CMakeLists.txt:225 (CHECK_SYMBOL_EXISTS)"
+    checks:
+      - "Looking for setmod"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tryyUH"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tryyUH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAVE_SETMODE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tryyUH'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_57076/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_57076.dir/build.make CMakeFiles/cmTC_57076.dir/build
+        Building C object CMakeFiles/cmTC_57076.dir/CheckSymbolExists.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc   -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_57076.dir/CheckSymbolExists.c.o -MF CMakeFiles/cmTC_57076.dir/CheckSymbolExists.c.o.d -o CMakeFiles/cmTC_57076.dir/CheckSymbolExists.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tryyUH/CheckSymbolExists.c
+        /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/CMakeFiles/CMakeScratch/TryCompile-tryyUH/CheckSymbolExists.c:2:10: fatal error: 'io.h' file not found
+            2 | #include <io.h>
+              |          ^~~~~~
+        1 error generated.
+        make[4]: *** [CMakeFiles/cmTC_57076.dir/CheckSymbolExists.c.o] Error 1
+        make[3]: *** [cmTC_57076/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "thirdparty/libtiff/CMakeLists.txt:230 (TRY_COMPILE)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "C_HAS_inline"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7d637/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7d637.dir/build.make CMakeFiles/cmTC_7d637.dir/build
+        Building C object CMakeFiles/cmTC_7d637.dir/test_inline.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc -Dinline=inline  -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_7d637.dir/test_inline.c.o -MF CMakeFiles/cmTC_7d637.dir/test_inline.c.o.d -o CMakeFiles/cmTC_7d637.dir/test_inline.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/thirdparty/libtiff/test_inline.c
+        Linking C executable cmTC_7d637
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d637.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7d637.dir/test_inline.c.o -o cmTC_7d637
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "thirdparty/libtiff/CMakeLists.txt:230 (TRY_COMPILE)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "C_HAS_inline"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_772e1/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_772e1.dir/build.make CMakeFiles/cmTC_772e1.dir/build
+        Building C object CMakeFiles/cmTC_772e1.dir/test_inline.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc -Dinline=inline  -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_772e1.dir/test_inline.c.o -MF CMakeFiles/cmTC_772e1.dir/test_inline.c.o.d -o CMakeFiles/cmTC_772e1.dir/test_inline.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/thirdparty/libtiff/test_inline.c
+        Linking C executable cmTC_772e1
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_772e1.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_772e1.dir/test_inline.c.o -o cmTC_772e1
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "thirdparty/libtiff/CMakeLists.txt:230 (TRY_COMPILE)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "C_HAS_inline"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bc955/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bc955.dir/build.make CMakeFiles/cmTC_bc955.dir/build
+        Building C object CMakeFiles/cmTC_bc955.dir/test_inline.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc -Dinline=inline  -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_bc955.dir/test_inline.c.o -MF CMakeFiles/cmTC_bc955.dir/test_inline.c.o.d -o CMakeFiles/cmTC_bc955.dir/test_inline.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/thirdparty/libtiff/test_inline.c
+        Linking C executable cmTC_bc955
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc955.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_bc955.dir/test_inline.c.o -o cmTC_bc955
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "thirdparty/libtiff/CMakeLists.txt:230 (TRY_COMPILE)"
+    directories:
+      source: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+      binary: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fPIC -O2 -w"
+      CMAKE_MODULE_PATH: "/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "C_HAS_inline"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/build/thirdparty/libtiff/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_095d7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_095d7.dir/build.make CMakeFiles/cmTC_095d7.dir/build
+        Building C object CMakeFiles/cmTC_095d7.dir/test_inline.c.o
+        /Library/Developer/CommandLineTools/usr/bin/cc -Dinline=inline  -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -MD -MT CMakeFiles/cmTC_095d7.dir/test_inline.c.o -MF CMakeFiles/cmTC_095d7.dir/test_inline.c.o.d -o CMakeFiles/cmTC_095d7.dir/test_inline.c.o -c /Users/alejandroaleman/git/nbis/openjp2/src/lib/openjp2/thirdparty/libtiff/test_inline.c
+        Linking C executable cmTC_095d7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_095d7.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/cc -fPIC -O2 -w  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_095d7.dir/test_inline.c.o -o cmTC_095d7
+        
+      exitCode: 0
+...

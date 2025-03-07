@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc ../lib/libz.a CMakeFiles/z.dir/adler32.c.o CMakeFiles/z.dir/compress.c.o CMakeFiles/z.dir/crc32.c.o CMakeFiles/z.dir/deflate.c.o CMakeFiles/z.dir/gzclose.c.o CMakeFiles/z.dir/gzlib.c.o CMakeFiles/z.dir/gzread.c.o CMakeFiles/z.dir/gzwrite.c.o CMakeFiles/z.dir/inflate.c.o CMakeFiles/z.dir/infback.c.o CMakeFiles/z.dir/inftrees.c.o CMakeFiles/z.dir/inffast.c.o CMakeFiles/z.dir/trees.c.o CMakeFiles/z.dir/uncompr.c.o CMakeFiles/z.dir/zutil.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib ../lib/libz.a

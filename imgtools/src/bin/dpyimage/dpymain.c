@@ -141,7 +141,7 @@ void procargs(int argc, char **argv)
       exit(0);
    }
 
-   program = rindex(*argv,'/');
+   program = strrchr(*argv,'/');
    if (program == (char *) NULL)
       program = *argv;
    else

@@ -174,12 +174,12 @@ if [ `uname` = "Linux" ]; then
 	X11_INC="/usr"
         X11_LIB="/usr"
 elif [ `uname` = "Darwin" ]; then  
-	X11_INC="/usr/X11R6/include"
-	X11_LIB="/usr/X11R6/lib"
+	X11_INC="/opt/homebrew/include"
+	X11_LIB="/opt/homebrew/lib"
 	OS_FLAG=1
 elif [ `uname` = "CYGWIN_NT-5.1" ]; then
-	X11_INC="/usr/X11R6/include"
-	X11_LIB="/usr/X11R6/lib"
+	X11_INC="/opt/homebrew/include"
+	X11_LIB="/opt/homebrew/lib"
 else
 	X11_INC="/usr/X11R6"
         X11_LIB="/usr/X11R6"
